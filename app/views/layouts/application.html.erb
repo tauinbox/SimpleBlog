@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link data-require="bootstrap@*" data-semver="3.2.0" rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.css" />
+  <script data-require="bootstrap@*" data-semver="3.2.0" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.js"></script>
+  <script data-require="jquery@*" data-semver="2.1.1" src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+
+<body>
+<div class = "container">
+	<!-- Static navbar -->
+	<nav class="navbar navbar-default" role="navigation">
+
+		<div class="navbar-header">
+
+			<%= link_to 'Sample Blog', articles_path, :class => "navbar-brand" %>
+
+		</div>
+
+		<div class="navbar-collapse collapse">
+
+			<ul class="nav navbar-nav">
+				<li><%= link_to 'New Article', new_article_path %></li>
+			  <li><%= link_to 'Terms', terms_path %></li>
+			  <li><%= link_to 'About', about_path %></li>
+			</ul>
+
+			<ul class="nav navbar-nav navbar-right">
+			  <li>
+				<% if user_signed_in? %>
+					<li><%= link_to 'Hello, ' + current_user.username + '!', edit_user_registration_path %></li>
+					<li><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></li>
+				<% else %>
+					<li><%= link_to 'Sign In', new_user_session_path %></li>
+				<% end %>
+			  </li>
+			</ul>
+
+		</div><!--/.nav-collapse -->
+	</nav>
+
+	<p class="notice"><%= notice %></p>
+	<p class="alert"><%= alert %></p>
+
+	<%= yield %>
+
+</div>
+
+</body>
+</html>
