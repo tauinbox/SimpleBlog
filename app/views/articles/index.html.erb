@@ -9,10 +9,20 @@
 </p>
 
 <p>
+	<!-- <button type="button" class="btn btn-success btn-xs" onclick="location.href='<%= article_path(article) %>'">Show</button>
+	<button type="button" class="btn btn-info btn-xs" onclick="location.href='<%= edit_article_path(article) %>'">Edit</button> -->
+
+	<%= link_to "Show", article_path(article), class: "btn btn-success btn-xs" %>
+	<%= link_to "Edit", edit_article_path(article), class: "btn btn-info btn-xs" %>
+	<%= link_to "Delete", article_path(article), class: "btn btn-danger btn-xs", method: :delete, data: { confirm: "Are you sure?" } %>
+	
+</p>
+
+<!-- <p>
 	<%= link_to 'Show', article_path(article) %> | 
 	<%= link_to 'Edit', edit_article_path(article) %> |
 	<%= link_to 'Destroy', article_path(article), method: :delete, data: { confirm: 'Are you sure?' } %>
-</p>
+</p> -->
 
 <hr />
 
