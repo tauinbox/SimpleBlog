@@ -3,6 +3,7 @@ class ArticlesController < ApplicationController
 
   def index
     @articles = Article.all
+    @users = User.all
   end
 
   def show
@@ -24,16 +25,21 @@ class ArticlesController < ApplicationController
 
   def edit
     @article = Article.find(params[:id])
+    if current_user.id != @article.user_id
+      flash.now[:error] = "YOU CAN'T EDIT OTHER PEOPLE'S POSTS!"
+      @articles = Article.all
+      @users = User.all
+      render action: 'index'
+    end
   end
 
   def update
     @article = Article.find(params[:id])
-
     if @article.update(article_params)
       redirect_to @article
     else
       render action: 'edit'
-    end    
+    end
   end
 
   def destroy
