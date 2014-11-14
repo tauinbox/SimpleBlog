@@ -25,14 +25,7 @@ class ArticlesController < ApplicationController
 
   def edit
     @article = Article.find(params[:id])
-    if user_signed_in?
-      if current_user.id != @article.user_id
-        flash.now[:error] = "YOU CAN'T EDIT OTHER PEOPLE'S POSTS!"
-        @articles = Article.all
-        @users = User.all
-        render action: 'index'
-      end
-    else
+    if current_user.id != @article.user_id
       flash.now[:error] = "YOU CAN'T EDIT OTHER PEOPLE'S POSTS!"
       @articles = Article.all
       @users = User.all
