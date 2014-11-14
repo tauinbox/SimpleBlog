@@ -44,9 +44,16 @@ class ArticlesController < ApplicationController
 
   def destroy
     @article = Article.find(params[:id])
-    @article.destroy
+    if current_user.id != @article.user_id
+      flash.now[:error] = "YOU CAN'T DELETE OTHER PEOPLE'S POSTS!"
+      @articles = Article.all
+      @users = User.all
+      render action: 'index'
+    else
+      @article.destroy
+      redirect_to articles_path
+    end
 
-    redirect_to articles_path
   end
 
   private
