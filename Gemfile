@@ -42,8 +42,9 @@ gem 'devise'
 
 group :test, :development do
   gem "rspec-rails", "~> 2.4"
-  gem 'capybara'
-  gem 'shoulda-matchers'
+  gem "capybara"
+  gem "shoulda-matchers"
   gem "factory_girl_rails", "~> 4.0"
+  gem "database_cleaner"
 end
 
