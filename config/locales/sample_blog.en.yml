@@ -1,0 +1,21 @@
+en:
+
+  activerecord:
+    models:
+      article: 'Article'
+    attributes:
+      article:
+        title: "Title"
+        text:  "Text"
+
+    models:
+      comment: 'Comment'
+    attributes:
+      comment:
+        body: "Add comment"
+
+  contacts:
+    contact_us: "Contact Us"
+
+  articles:
+    edit: "Edit article"
