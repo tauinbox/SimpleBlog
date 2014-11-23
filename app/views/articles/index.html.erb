@@ -11,21 +11,15 @@
 <p>
 	<!-- <button type="button" class="btn btn-success btn-xs" onclick="location.href='<%= article_path(article) %>'">Show</button>
 	<button type="button" class="btn btn-info btn-xs" onclick="location.href='<%= edit_article_path(article) %>'">Edit</button> -->
-	<i>Posted by <b><%= @users.find(article.user_id).username %></b></i><br />
+	<i><%= t('articles.posted_by') %> <b><%= @users.find(article.user_id).username %></b></i><br />
 	<% if user_signed_in? %>
 		<% if current_user.username ==  @users.find(article.user_id).username %>
 			<!-- <%= link_to "Show", article_path(article), class: "btn btn-success btn-xs" %> -->
-			<%= link_to "Edit", edit_article_path(article), class: "btn btn-warning btn-xs" %>
-			<%= link_to "Delete", article_path(article), class: "btn btn-danger btn-xs", method: :delete, data: { confirm: t('confirms.sure') } %>
+			<%= link_to t('buttons.edit'), edit_article_path(article), class: "btn btn-warning btn-xs" %>
+			<%= link_to t('buttons.delete'), article_path(article), class: "btn btn-danger btn-xs", method: :delete, data: { confirm: t('confirms.sure') } %>
 		<% end %>
 	<% end %>
 </p>
-
-<!-- <p>
-	<%= link_to 'Show', article_path(article) %> | 
-	<%= link_to 'Edit', edit_article_path(article) %> |
-	<%= link_to 'Destroy', article_path(article), method: :delete, data: { confirm: 'Are you sure?' } %>
-</p> -->
 
 <hr />
 

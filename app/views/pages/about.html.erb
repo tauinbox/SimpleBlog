@@ -1,4 +1,7 @@
-<h1>About us</h1>
+<h1><%= t('pages.about_header') %></h1>
 <p>
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+  <%= t('pages.about_info') %>
 </p>
+
+<%= link_to t('links.terms'), terms_path %></br>
+<%= link_to t('links.feedback'), new_contacts_path %>
