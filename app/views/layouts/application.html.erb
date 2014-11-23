@@ -38,9 +38,9 @@
 			  <li>
 				<% if user_signed_in? %>
 					<li><%= link_to t('main_layout.hello') + current_user.username + '!', edit_user_registration_path %></li>
-					<li><%= link_to t('main_layout.sign_out'), destroy_user_session_path, method: :delete %></li>
+					<li><%= link_to t('action_links.sign_out'), destroy_user_session_path, method: :delete %></li>
 				<% else %>
-					<li><%= link_to t('main_layout.sign_in'), new_user_session_path %></li>
+					<li><%= link_to t('action_links.sign_in'), new_user_session_path %></li>
 				<% end %>
 			  </li>
 			</ul>

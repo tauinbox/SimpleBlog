@@ -21,6 +21,12 @@ en:
         email:    "Email"
         message:  "Message"
 
+  headers:
+    sign_in:      "Sign In"
+    sign_out:     "Sign Out"
+    sign_up:      "Sign Up"
+    resend_confr: "Resend confirmation instructions"
+
   contacts:
     contact_us:   "Contact Us"
     send_message: "Send message"
@@ -37,6 +43,10 @@ en:
   buttons:
     edit:         "Edit"
     delete:       "Delete"
+    sign_in:      "Sign In"
+    sign_out:     "Sign Out"
+    sign_up:      "Sign Up"
+    resend_confr: "Resend confirmation instructions"
 
   confirms:
     sure:         "Are you sure?"
@@ -54,11 +64,18 @@ en:
     new_article:  "New Post"
     about:        "About"
     hello:        "Hello, "
+
+  action_links:
     sign_in:      "Sign In"
     sign_out:     "Sign Out"
+    sign_up:      "Sign Up"
+    forgot_pass:  "Forgot your password?"
+    d_r_conf_ins: "Didn't receive confirmation instructions?"
+    d_r_unlk_ins: "Didn't receive unlock instructions?"
+    sign_in_with: "Sign in with #{provider.to_s.titleize}"
 
   pages:
     terms_header: "Terms of Service"
     about_header: "About us"
-    terms_info:   "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-    about_info:   "Lorem ipsum dolor sit amet, consectetur adipisicing elit"
+    terms_info:   "All rights unreserved. Use at your own risk"
+    about_info:   "We are the champions my friend"

@@ -21,6 +21,12 @@ ru:
         email:    "Ваш адрес Email"
         message:  "Отправить сообщение"
 
+  headers:
+    sign_in:      "Вход"
+    sign_out:     "Выход"
+    sign_up:      "Регистрация"
+    resend_confr: "Повторно выслать подтверждение"
+
   contacts:
     contact_us:   "Нам важно Ваше мнение"
     send_message: "Отправить"
@@ -32,11 +38,15 @@ ru:
     add_comment:  "Добавить комментарий"
     posted_by:    "Написал"
     submit:       "Сохранить изменения"
-    create:       "Статья готова"
+    create:       "Опубликовать"
 
   buttons:
     edit:         'Редактировать'
     delete:       'Удалить'    
+    sign_in:      "Вход"
+    sign_out:     "Выход"
+    sign_up:      "Регистрация"
+    resend_confr: "Повторно выслать подтверждение"
 
   confirms:
     sure:         "Вы уверены?"
@@ -54,8 +64,15 @@ ru:
     new_article:  "Новый пост"
     about:        "О нас"
     hello:        "Привет, "
+
+  action_links:
     sign_in:      "Вход"
     sign_out:     "Выход"
+    sign_up:      "Регистрация"
+    forgot_pass:  "Забыли пароль?"
+    d_r_conf_ins: "Не получили подтверждения?"
+    d_r_unlk_ins: "Не получили инструкций по разблокировке?"
+    sign_in_with: "Войти через #{provider.to_s.titleize}"
 
   pages:
     terms_header: "Условия использования"
