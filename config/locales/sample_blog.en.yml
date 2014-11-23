@@ -40,3 +40,12 @@ en:
   flashes:
     cant_edit:    "YOU CAN'T EDIT OTHER PEOPLE'S POSTS!"
     cant_delete:  "YOU CAN'T DELETE OTHER PEOPLE'S POSTS!"
+
+  main_layout:
+    new_article:  'New Post'
+    terms:        'Terms'
+    about:        'About'
+    contact_us:   'Contact Us'
+    hello:        'Hello, '
+    sign_in:      'Sign In'
+    sign_out:     'Sign Out'

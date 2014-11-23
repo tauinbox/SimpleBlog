@@ -30,19 +30,19 @@
 		<div class="navbar-collapse collapse">
 
 			<ul class="nav navbar-nav">
-				<li><%= link_to 'New Article', new_article_path %></li>
-			  <li><%= link_to 'Terms', terms_path %></li>
-			  <li><%= link_to 'About', about_path %></li>
-			  <li><%= link_to 'Contact Us', new_contacts_path %></li>
+				<li><%= link_to t('main_layout.new_article'), new_article_path %></li>
+			  <li><%= link_to t('main_layout.terms'), terms_path %></li>
+			  <li><%= link_to t('main_layout.about'), about_path %></li>
+			  <li><%= link_to t('main_layout.contact_us'), new_contacts_path %></li>
 			</ul>
 
 			<ul class="nav navbar-nav navbar-right">
 			  <li>
 				<% if user_signed_in? %>
-					<li><%= link_to 'Hello, ' + current_user.username + '!', edit_user_registration_path %></li>
-					<li><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></li>
+					<li><%= link_to t('main_layout.hello') + current_user.username + '!', edit_user_registration_path %></li>
+					<li><%= link_to t('main_layout.sign_out'), destroy_user_session_path, method: :delete %></li>
 				<% else %>
-					<li><%= link_to 'Sign In', new_user_session_path %></li>
+					<li><%= link_to t('main_layout.sign_in'), new_user_session_path %></li>
 				<% end %>
 			  </li>
 			</ul>
