@@ -14,16 +14,17 @@
 <hr />
 
 <p>
-<%= form_for([@article, @article.comments.build]) do |f| %>
+<% if user_signed_in? %>
+	<%= form_for([@article, @article.comments.build]) do |f| %>
 
-	<p>
-		<%= f.label :body, size: 60 %><br />
-		<%= f.text_area :body, class: 'form-control' %>
-	</p>
+		<p>
+			<%= f.label :body, size: 60 %><br />
+			<%= f.text_area :body, class: 'form-control' %>
+		</p>
 
-	<p>
-		<%= f.submit t('articles.add_comment'), class: 'btn btn-primary' %>
-	</p>
+		<p>
+			<%= f.submit t('articles.add_comment'), class: 'btn btn-primary' %>
+		</p>
+	<% end %>
 <% end %>
-
 </p>
