@@ -26,6 +26,9 @@ ru:
     sign_out:     "Выход"
     sign_up:      "Регистрация"
     resend_confr: "Повторно выслать подтверждение"
+    change_pass:  "Смена пароля"
+    profile_chng: "Настройка профиля - "
+    cancel_acc:   "Удаление аккаунта"
 
   contacts:
     contact_us:   "Нам важно Ваше мнение"
@@ -41,12 +44,15 @@ ru:
     create:       "Опубликовать"
 
   buttons:
-    edit:         'Редактировать'
-    delete:       'Удалить'    
+    edit:         "Редактировать"
+    delete:       "Удалить"
+    update:       "Применить изменения"
     sign_in:      "Вход"
     sign_out:     "Выход"
     sign_up:      "Регистрация"
     resend_confr: "Повторно выслать подтверждение"
+    change_pass:  "Сменить пароль"
+    cancel_acc:   "Удалить аккаунт"
 
   confirms:
     sure:         "Вы уверены?"
@@ -69,6 +75,7 @@ ru:
     sign_in:      "Вход"
     sign_out:     "Выход"
     sign_up:      "Регистрация"
+    back:         "Назад"
     forgot_pass:  "Забыли пароль?"
     d_r_conf_ins: "Не получили подтверждения?"
     d_r_unlk_ins: "Не получили инструкций по разблокировке?"

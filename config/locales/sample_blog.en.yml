@@ -26,6 +26,9 @@ en:
     sign_out:     "Sign Out"
     sign_up:      "Sign Up"
     resend_confr: "Resend confirmation instructions"
+    change_pass:  "Change your password"
+    profile_chng: "Edit profile - "
+    cancel_acc:   "Cancel my account"
 
   contacts:
     contact_us:   "Contact Us"
@@ -43,10 +46,13 @@ en:
   buttons:
     edit:         "Edit"
     delete:       "Delete"
+    update:       "Update"
     sign_in:      "Sign In"
     sign_out:     "Sign Out"
     sign_up:      "Sign Up"
     resend_confr: "Resend confirmation instructions"
+    change_pass:  "Change password"
+    cancel_acc:   "Cancel my account"
 
   confirms:
     sure:         "Are you sure?"
@@ -69,6 +75,7 @@ en:
     sign_in:      "Sign In"
     sign_out:     "Sign Out"
     sign_up:      "Sign Up"
+    back:         "Back"
     forgot_pass:  "Forgot your password?"
     d_r_conf_ins: "Didn't receive confirmation instructions?"
     d_r_unlk_ins: "Didn't receive unlock instructions?"
