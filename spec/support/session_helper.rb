@@ -6,5 +6,5 @@ def sign_up
     fill_in :user_password, :with => 'secure123!@#'
     fill_in :user_password_confirmation, :with => 'secure123!@#'
 
-    click_button 'Sign up'
+    click_button I18n.t('buttons.sign_up')
 end
