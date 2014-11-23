@@ -2,20 +2,41 @@ en:
 
   activerecord:
     models:
-      article: 'Article'
+      article:    'Article'
+      comment:    'Comment'
+      contact:    'Contact'
+      user:       'User'
+
     attributes:
       article:
-        title: "Title"
-        text:  "Text"
+        title:    'Title'
+        text:     'Text'
 
-    models:
-      comment: 'Comment'
-    attributes:
       comment:
-        body: "Add comment"
+        body:     'Comment'
+        author:   'Author'
+
+      contact:
+        email:    'Email'
+        message:  'Message'
+
+      user:
+        email:    'Email'
+        username: 'Username'
 
   contacts:
-    contact_us: "Contact Us"
+    contact_us:   'Contact Us'
+    send_message: 'Send message'
+    created:      'Thanks!'
 
   articles:
-    edit: "Edit article"
+    new:          'New Article'
+    edit:         'Edit article'
+    add_comment:  'Add comment'
+
+  confirms:
+    sure:         'Are you sure?'
+
+  flashes:
+    cant_edit:    "YOU CAN'T EDIT OTHER PEOPLE'S POSTS!"
+    cant_delete:  "YOU CAN'T DELETE OTHER PEOPLE'S POSTS!"

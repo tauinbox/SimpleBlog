@@ -26,7 +26,7 @@ class ArticlesController < ApplicationController
   def edit
     @article = Article.find(params[:id])
     if current_user.id != @article.user_id
-      flash.now[:error] = "YOU CAN'T EDIT OTHER PEOPLE'S POSTS!"
+      flash.now[:error] = I18n.t('flashes.cant_edit')
       @articles = Article.all
       @users = User.all
       render action: 'index'
@@ -45,7 +45,7 @@ class ArticlesController < ApplicationController
   def destroy
     @article = Article.find(params[:id])
     if current_user.id != @article.user_id
-      flash.now[:error] = "YOU CAN'T DELETE OTHER PEOPLE'S POSTS!"
+      flash.now[:error] = I18n.t('flashes.cant_delete')
       @articles = Article.all
       @users = User.all
       render action: 'index'
