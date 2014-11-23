@@ -1,0 +1,69 @@
+ru:
+
+  activerecord:
+
+    models:
+      article:    "Статья"
+      comment:    "Комментарий"
+      contact:    "Контакт"
+      user:       "Пользователь"
+
+    attributes:
+
+      article:
+        title:    "Заголовок"
+        text:     "Текст"
+
+      comment:
+        body:     "Комментарий"
+        author:   "Автор"
+
+      contact:
+        email:    "Ваш адрес Email"
+        message:  "Отправить сообщение"
+
+      user:
+        email:    "Email"
+        username: "Пользователь"
+
+  contacts:
+    contact_us:   "Нам важно Ваше мнение"
+    send_message: "Отправить"
+    created:      "Спасибо!"
+
+  articles:
+    new:          "Новая статья"
+    edit:         "Редактирование статьи"
+    add_comment:  "Добавить комментарий"
+    posted_by:    "Написал"
+    submit:       "Сохранить изменения"
+    create:       "Статья готова"
+
+  buttons:
+    edit:         'Редактировать'
+    delete:       'Удалить'    
+
+  confirms:
+    sure:         "Вы уверены?"
+
+  flashes:
+    cant_edit:    "ВЫ НЕ МОЖЕТЕ ИЗМЕНЯТЬ СТАТЬИ ДРУГИХ АВТОРОВ!"
+    cant_delete:  "ВЫ НЕ МОЖЕТЕ УДАЛЯТЬ СТАТЬИ ДРУГИХ АВТОРОВ!"
+
+  links:
+    terms:        "Условия использования"
+    feedback:     "Оставить отзыв"
+
+  main_layout:
+    blog_name:    "ПростоБлог"
+    new_article:  "Новый пост"
+    about:        "О нас"
+    hello:        "Привет, "
+    sign_in:      "Вход"
+    sign_out:     "Выход"
+
+  pages:
+    terms_header: "Условия использования"
+    about_header: "О нас"
+    terms_info:   "Бла-бла-бла, потому что бла-бла-бла"
+    about_info:   "Мы бла-бла-бла, а так же занимаем лидирующие позиции в бла-бла-бла"    
