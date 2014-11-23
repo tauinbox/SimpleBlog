@@ -1,52 +1,69 @@
 en:
 
   activerecord:
+
     models:
-      article:    'Article'
-      comment:    'Comment'
-      contact:    'Contact'
-      user:       'User'
+      article:    "Article"
+      comment:    "Comment"
+      contact:    "Contact"
+      user:       "User"
 
     attributes:
+
       article:
-        title:    'Title'
-        text:     'Text'
+        title:    "Title"
+        text:     "Text"
 
       comment:
-        body:     'Comment'
-        author:   'Author'
+        body:     "Comment"
+        author:   "Author"
 
       contact:
-        email:    'Email'
-        message:  'Message'
+        email:    "Email"
+        message:  "Message"
 
       user:
-        email:    'Email'
-        username: 'Username'
+        email:    "Email"
+        username: "Username"
 
   contacts:
-    contact_us:   'Contact Us'
-    send_message: 'Send message'
-    created:      'Thanks!'
+    contact_us:   "Contact Us"
+    send_message: "Send message"
+    created:      "Thanks!"
 
   articles:
-    new:          'New Article'
-    edit:         'Edit article'
-    add_comment:  'Add comment'
+    new:          "New Article"
+    edit:         "Edit article"
+    add_comment:  "Add comment"
+    posted_by:    "Posted by"
+    submit:       "Save changes"
+    create:       "Post It!"
+
+  buttons:
+    edit:         "Edit"
+    delete:       "Delete"
 
   confirms:
-    sure:         'Are you sure?'
+    sure:         "Are you sure?"
 
   flashes:
     cant_edit:    "YOU CAN'T EDIT OTHER PEOPLE'S POSTS!"
     cant_delete:  "YOU CAN'T DELETE OTHER PEOPLE'S POSTS!"
 
+  links:
+    terms:        "Terms of service"
+    feedback:     "Contact Us"    
+
   main_layout:
-    blog_name:    'Sample Blog'
-    new_article:  'New Post'
-    terms:        'Terms'
-    about:        'About'
-    contact_us:   'Contact Us'
-    hello:        'Hello, '
-    sign_in:      'Sign In'
-    sign_out:     'Sign Out'
+    blog_name:    "Sample Blog"
+    new_article:  "New Post"
+    about:        "About"
+    hello:        "Hello, "
+    sign_in:      "Sign In"
+    sign_out:     "Sign Out"
+
+  pages:
+    terms_header: "Terms of Service"
+    about_header: "About us"
+    terms_info:   "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+    about_info:   "Lorem ipsum dolor sit amet, consectetur adipisicing elit"
