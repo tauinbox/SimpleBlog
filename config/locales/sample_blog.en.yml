@@ -6,7 +6,6 @@ en:
       article:    "Article"
       comment:    "Comment"
       contact:    "Contact"
-      user:       "User"
 
     attributes:
 
@@ -21,10 +20,6 @@ en:
       contact:
         email:    "Email"
         message:  "Message"
-
-      user:
-        email:    "Email"
-        username: "Username"
 
   contacts:
     contact_us:   "Contact Us"

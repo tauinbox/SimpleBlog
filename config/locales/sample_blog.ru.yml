@@ -6,7 +6,6 @@ ru:
       article:    "Статья"
       comment:    "Комментарий"
       contact:    "Контакт"
-      user:       "Пользователь"
 
     attributes:
 
@@ -21,10 +20,6 @@ ru:
       contact:
         email:    "Ваш адрес Email"
         message:  "Отправить сообщение"
-
-      user:
-        email:    "Email"
-        username: "Пользователь"
 
   contacts:
     contact_us:   "Нам важно Ваше мнение"
