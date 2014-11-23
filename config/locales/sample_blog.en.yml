@@ -42,6 +42,7 @@ en:
     cant_delete:  "YOU CAN'T DELETE OTHER PEOPLE'S POSTS!"
 
   main_layout:
+    blog_name:    'Sample Blog'
     new_article:  'New Post'
     terms:        'Terms'
     about:        'About'
