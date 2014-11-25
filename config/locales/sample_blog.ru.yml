@@ -3,86 +3,108 @@ ru:
   activerecord:
 
     models:
-      article:    "Статья"
-      comment:    "Комментарий"
-      contact:    "Контакт"
+      article:                  "Статья"
+      comment:                  "Комментарий"
+      contact:                  "Контакт"
 
     attributes:
 
       article:
-        title:    "Заголовок"
-        text:     "Текст"
+        title:                  "Заголовок"
+        text:                   "Текст"
 
       comment:
-        body:     "Комментарий"
-        author:   "Автор"
+        body:                   "Комментарий"
+        author:                 "Автор"
 
       contact:
-        email:    "Ваш адрес Email"
-        message:  "Отправить сообщение"
+        email:                  "Ваш адрес E-mail"
+        message:                "Отправить сообщение"
+
+  helpers:
+
+    label:
+
+      article:
+        title:                  "Заголовок"
+        text:                   "Текст"
+
+      comment:
+        body:                   "Комментарий"
+        author:                 "Автор"
+
+      contact:
+        email:                  "Ваш адрес E-mail"
+        message:                "Текст сообщения"
+
+      user:
+        email:                  "Почтовый адрес E-mail"
+        password:               "Новый пароль"
+        password_confirmation:  "Подтверждение нового пароля"
+        current_password:       "Старый пароль"
 
   headers:
-    sign_in:      "Вход"
-    sign_out:     "Выход"
-    sign_up:      "Регистрация"
-    resend_confr: "Повторно выслать подтверждение"
-    change_pass:  "Смена пароля"
-    profile_chng: "Настройка профиля - "
-    cancel_acc:   "Удаление аккаунта"
+    sign_in:                    "Вход"
+    sign_out:                   "Выход"
+    sign_up:                    "Регистрация"
+    resend_confr:               "Повторно выслать подтверждение"
+    change_pass:                "Смена пароля"
+    profile_chng:               "Настройка профиля - "
+    cancel_acc:                 "Удаление аккаунта"
 
   contacts:
-    contact_us:   "Нам важно Ваше мнение"
-    send_message: "Отправить"
-    created:      "Спасибо!"
+    contact_us:                 "Нам важно Ваше мнение"
+    send_message:               "Отправить"
+    created:                    "Спасибо!"
 
   articles:
-    new:          "Новая статья"
-    edit:         "Редактирование статьи"
-    add_comment:  "Добавить комментарий"
-    posted_by:    "Написал"
-    submit:       "Сохранить изменения"
-    create:       "Опубликовать"
+    new:                        "Новая статья"
+    edit:                       "Редактирование статьи"
+    add_comment:                "Добавить комментарий"
+    posted_by:                  "Написал"
+    submit:                     "Сохранить изменения"
+    create:                     "Опубликовать"
 
   buttons:
-    edit:         "Редактировать"
-    delete:       "Удалить"
-    update:       "Применить изменения"
-    sign_in:      "Вход"
-    sign_out:     "Выход"
-    sign_up:      "Регистрация"
-    resend_confr: "Повторно выслать подтверждение"
-    change_pass:  "Сменить пароль"
-    cancel_acc:   "Удалить аккаунт"
+    edit:                       "Редактировать"
+    delete:                     "Удалить"
+    update:                     "Применить изменения"
+    sign_in:                    "Вход"
+    sign_out:                   "Выход"
+    sign_up:                    "Регистрация"
+    resend_confr:               "Повторно выслать подтверждение"
+    change_pass:                "Сменить пароль"
+    cancel_acc:                 "Удалить аккаунт"
 
   confirms:
-    sure:         "Вы уверены?"
+    sure:                       "Вы уверены?"
 
   flashes:
-    cant_edit:    "ВЫ НЕ МОЖЕТЕ ИЗМЕНЯТЬ СТАТЬИ ДРУГИХ АВТОРОВ!"
-    cant_delete:  "ВЫ НЕ МОЖЕТЕ УДАЛЯТЬ СТАТЬИ ДРУГИХ АВТОРОВ!"
+    cant_edit:                  "ВЫ НЕ МОЖЕТЕ ИЗМЕНЯТЬ СТАТЬИ ДРУГИХ АВТОРОВ!"
+    cant_delete:                "ВЫ НЕ МОЖЕТЕ УДАЛЯТЬ СТАТЬИ ДРУГИХ АВТОРОВ!"
 
   links:
-    terms:        "Условия использования"
-    feedback:     "Оставить отзыв"
+    terms:                      "Условия использования"
+    feedback:                   "Оставить отзыв"
 
   main_layout:
-    blog_name:    "ПростоБлог"
-    new_article:  "Новый пост"
-    about:        "О нас"
-    hello:        "Привет, "
+    blog_name:                  "ПростоБлог"
+    new_article:                "Новый пост"
+    about:                      "О нас"
+    hello:                      "Привет, "
 
   action_links:
-    sign_in:      "Вход"
-    sign_out:     "Выход"
-    sign_up:      "Регистрация"
-    back:         "Назад"
-    forgot_pass:  "Забыли пароль?"
-    d_r_conf_ins: "Не получили подтверждения?"
-    d_r_unlk_ins: "Не получили инструкций по разблокировке?"
-    sign_in_with: "Войти через #{provider.to_s.titleize}"
+    sign_in:                    "Вход"
+    sign_out:                   "Выход"
+    sign_up:                    "Регистрация"
+    back:                       "Назад"
+    forgot_pass:                "Забыли пароль?"
+    d_r_conf_ins:               "Не получили подтверждения?"
+    d_r_unlk_ins:               "Не получили инструкций по разблокировке?"
+    sign_in_with:               "Войти через #{provider.to_s.titleize}"
 
   pages:
-    terms_header: "Условия использования"
-    about_header: "О нас"
-    terms_info:   "Бла-бла-бла, потому что бла-бла-бла"
-    about_info:   "Мы бла-бла-бла, а так же занимаем лидирующие позиции в бла-бла-бла"    
+    terms_header:               "Условия использования"
+    about_header:               "О нас"
+    terms_info:                 "Бла-бла-бла, потому что бла-бла-бла"
+    about_info:                 "Мы бла-бла-бла, а так же занимаем лидирующие позиции в бла-бла-бла"    
