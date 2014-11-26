@@ -64,6 +64,7 @@ en:
     posted_by:                  "Posted by"
     submit:                     "Save changes"
     create:                     "Post It!"
+    commented:                  " said: "
 
   buttons:
     edit:                       "Edit"

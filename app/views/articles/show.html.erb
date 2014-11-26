@@ -6,7 +6,7 @@
 <% @article.comments.each do |comment| %>
 	<p>
 		<hr />
-		<i><%= comment.author %> said:</i><br />
+		<i><b><%= comment.author %></b> <%= t('articles.commented') %></i><br />
 		<%= comment.body %>
 	</p>
 <% end %>
