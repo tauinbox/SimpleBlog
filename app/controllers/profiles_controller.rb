@@ -6,18 +6,12 @@ class ProfilesController < ApplicationController
   end
 
   def edit
-    #@profile = Profile.where(user_id: current_user.id)
-    #if current_user.id != @profile.user_id
-      # flash.now[:error] = I18n.t('flashes.cant_edit')
-      # @articles = Article.all
-      # @users = User.all
-      # render action: 'index'
-    #end
+    @profile = Profile.where(user_id: current_user.id)
   end
 
   def update
-    # @profile = Profile.where(user_id: current_user.id)
-    # if @uprofile.update(profile_params)
+    @profile = Profile.where(user_id: current_user.id)
+    # if @profile.update(profile_params)
     #   redirect_to action: 'show'
     # else
     #   render action: 'edit'

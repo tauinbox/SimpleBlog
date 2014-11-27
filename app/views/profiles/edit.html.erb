@@ -2,11 +2,11 @@
 
 <%= form_for :profile, url: user_profile_path(current_user.id), method: :put do |f| %>
 
-	<%= p @profile %>
+	<%= @profile.inspect %>
 	
 	<p>
 		<%= f.label :image_id %><br />
-		<%= f.text_field :image_id, class: 'form-control' %>
+		<%= f.number_field :image_id, class: 'form-control' %>
 	</p>
 	<p>
 		<%= f.label :description %><br />
