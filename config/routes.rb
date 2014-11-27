@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
-  devise_for :users
+  devise_for :users, :controllers => {:registrations => "registrations"}
+
   root to: "home#index"
 
   get 'home/index'
@@ -9,8 +10,13 @@ Rails.application.routes.draw do
   get 'about' => 'pages#about'
 
   resource :contacts, only: [:new, :create], path_names: { :new => '' } 
+
   resources :articles do
     resources :comments, only: :create
+  end
+
+  resources :users do
+    resource :profile, only: [:show, :edit, :update]
   end
 
   # The priority is based upon order of creation: first created -> highest priority.
