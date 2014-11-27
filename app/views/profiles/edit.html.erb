@@ -2,8 +2,6 @@
 
 <%= form_for :profile, url: user_profile_path(current_user.id), method: :put do |f| %>
 
-	<%= @profile.inspect %>
-	
 	<p>
 		<%= f.label :image_id %><br />
 		<%= f.number_field :image_id, class: 'form-control' %>

@@ -1,22 +1,21 @@
 class ProfilesController < ApplicationController
 
   def show
-    @profile = Profile.where(user_id: current_user.id)
+    @profile = Profile.where(user_id: current_user.id).first
     # @profile = UserProfile.user
   end
 
   def edit
-    @profile = Profile.where(user_id: current_user.id)
+    @profile = Profile.where(user_id: current_user.id).first
   end
 
   def update
-    @profile = Profile.where(user_id: current_user.id)
-    # if @profile.update(profile_params)
-    #   redirect_to action: 'show'
-    # else
-    #   render action: 'edit'
-    # end
-    redirect_to action: 'show'
+    @profile = Profile.where(user_id: current_user.id).first
+    if @profile.update(profile_params)
+      redirect_to action: 'show'
+    else
+      render action: 'edit'
+    end
   end
 
   private
