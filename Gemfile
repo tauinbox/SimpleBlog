@@ -39,6 +39,8 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw]
 
 gem 'devise'
 
+gem 'carrierwave'
+
 group :test, :development do
   gem "rspec-rails", "~> 2.4"
   gem "capybara"
