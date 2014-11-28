@@ -1,5 +1,13 @@
 Rails.application.routes.draw do
 
+  get 'images/index'
+
+  get 'images/new'
+
+  get 'images/create'
+
+  get 'images/destroy'
+
   devise_for :users, :controllers => {:registrations => "registrations"}
 
   root to: "home#index"
@@ -18,6 +26,8 @@ Rails.application.routes.draw do
   resources :users do
     resource :profile, only: [:show, :edit, :update]
   end
+
+  resources :images, only: [:index, :new, :create, :destroy]
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
