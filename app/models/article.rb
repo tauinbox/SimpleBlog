@@ -4,6 +4,7 @@ class Article < ActiveRecord::Base
 
   has_many :comments
   belongs_to :user
+  has_many :images, as: :imageable
 
   def subject
     title
