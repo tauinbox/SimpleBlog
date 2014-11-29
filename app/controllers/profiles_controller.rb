@@ -7,6 +7,7 @@ class ProfilesController < ApplicationController
 
   def edit
     @profile = Profile.where(user_id: current_user.id).first
+    @image = @profile.image
   end
 
   def update

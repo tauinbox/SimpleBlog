@@ -3,10 +3,6 @@
 <%= form_for :profile, url: user_profile_path(current_user.id), method: :put do |f| %>
 
 	<p>
-		<%= f.label :image_id %><br />
-		<%= f.number_field :image_id, class: 'form-control' %>
-	</p>
-	<p>
 		<%= f.label :description %><br />
 		<%= f.text_field :description, class: 'form-control' %>
 	</p>

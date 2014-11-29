@@ -5,8 +5,7 @@ class CreateProfiles < ActiveRecord::Migration
       #t.integer :image_id
       t.text :description
       t.references :user, index: true
-      t.references :image, index: true
-
+      
       t.timestamps
     end
   end
