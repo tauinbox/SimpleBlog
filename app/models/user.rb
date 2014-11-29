@@ -5,5 +5,4 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
   has_many :articles
   has_one :profile
-  has_one :image, as: :imageable
 end

@@ -48,12 +48,15 @@ ActiveRecord::Schema.define(version: 20141128095929) do
   end
 
   create_table "profiles", force: true do |t|
+    t.text     "description"
     t.integer  "user_id"
     t.integer  "image_id"
-    t.text     "description"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "profiles", ["image_id"], name: "index_profiles_on_image_id"
+  add_index "profiles", ["user_id"], name: "index_profiles_on_user_id"
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
