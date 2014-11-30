@@ -2,12 +2,17 @@ class ProfilesController < ApplicationController
 
   def show
     @profile = Profile.where(user_id: current_user.id).first
-    # @profile = UserProfile.user
   end
 
   def edit
     @profile = Profile.where(user_id: current_user.id).first
     @image = @profile.image
+
+    unless @image
+      @profile.image = Image.new
+      @image = @profile.image
+    end
+
   end
 
   def update
@@ -22,7 +27,7 @@ class ProfilesController < ApplicationController
   private
 
   def profile_params
-    params.require(:profile).permit(:image_id, :description)
+    params.require(:profile).permit(:description)
   end
 
 end
