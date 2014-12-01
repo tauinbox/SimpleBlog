@@ -40,6 +40,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw]
 gem 'devise'
 
 gem 'carrierwave'
+gem "mini_magick"
 
 group :test, :development do
   gem "rspec-rails", "~> 2.4"
