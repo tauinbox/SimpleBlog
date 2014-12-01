@@ -11,6 +11,8 @@
 <%= @profile.description %>
 </br>
 </br>
-<% if @profile.user_id == current_user.id %>
-	<%= link_to 'Edit profile', edit_user_profile_path(current_user.id), class: "btn btn-warning" %>
+<% if user_signed_in? %>
+  <% if @profile.user_id == current_user.id %>
+  	<%= link_to 'Edit profile', edit_user_profile_path(current_user.id), class: "btn btn-warning" %>
+  <% end %>
 <% end %>
