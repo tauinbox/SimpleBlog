@@ -9,3 +9,6 @@
 <% end %>
 
 <%= @profile.description %>
+</br>
+</br>
+<%= link_to 'Edit profile', edit_user_profile_path(current_user.id), class: "btn btn-warning" %>
