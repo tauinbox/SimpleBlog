@@ -1,4 +1,11 @@
  <h1>User profile</h1>
 
-<img src="<%= @profile.image.attachment %>" /></br>
+<% if @profile.image.attachment.size == 0 %>
+	<h3> Avatar is missing </h3></br>
+<% else %>
+	<img src="<%= @profile.image.attachment %>" />
+	</br>
+	</br>
+<% end %>
+
 <%= @profile.description %>
