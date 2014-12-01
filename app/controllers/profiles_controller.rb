@@ -1,18 +1,16 @@
 class ProfilesController < ApplicationController
 
   def show
-    @profile = Profile.where(user_id: current_user.id).first
+    @profile = Profile.where(user_id: params[:user_id]).first
+
+    unless @profile
+      redirect_to home_index_path
+    end
   end
 
   def edit
     @profile = Profile.where(user_id: current_user.id).first
     @image = @profile.image
-    
-    unless @image
-      @profile.image = Image.new
-      @image = @profile.image
-    end
-
   end
 
   def update
