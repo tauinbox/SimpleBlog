@@ -39,7 +39,7 @@ ru:
 
       user:
         email:                  "Почтовый адрес E-mail"
-        password:               "Новый пароль"
+        password:               "Пароль"
         password_confirmation:  "Подтверждение нового пароля"
         current_password:       "Старый пароль"
 

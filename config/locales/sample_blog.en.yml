@@ -39,7 +39,7 @@ en:
 
       user:
         email:                  "E-mail"
-        password:               "New password"
+        password:               "Password"
         password_confirmation:  "Confirm new password"
         current_password:       "Current password"
 
