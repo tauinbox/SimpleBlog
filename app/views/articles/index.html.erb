@@ -11,7 +11,7 @@
 <p>
 	<!-- <button type="button" class="btn btn-success btn-xs" onclick="location.href='<%= article_path(article) %>'">Show</button>
 	<button type="button" class="btn btn-info btn-xs" onclick="location.href='<%= edit_article_path(article) %>'">Edit</button> -->
-	<i><%= t('articles.posted_by') %> <b><%= @users.find(article.user_id).username %></b></i><br />
+	<i><%= t('articles.posted_by') %> <b><%= link_to @users.find(article.user_id).username, user_profile_path(article.user_id) %></b></i><br />
 	<% if user_signed_in? %>
 		<% if current_user.username ==  @users.find(article.user_id).username %>
 			<!-- <%= link_to "Show", article_path(article), class: "btn btn-success btn-xs" %> -->
