@@ -1,26 +1,34 @@
 <% @articles.each do |article| %>
 
-<h2>
-	<%= link_to article.title, article_path(article) %>
-</h2>
+<div class="row">
+	<div class="col-xs-9">
+		<h2>
+			<%= link_to article.title, article_path(article) %>
+		</h2>
 
-<p>
-	<%= simple_format(truncate(article.text, length: 250)) %>
-</p>
+		<p>
+			<%= simple_format(truncate(article.text, length: 250)) %>
+		</p>
 
-<p>
-	<!-- <button type="button" class="btn btn-success btn-xs" onclick="location.href='<%= article_path(article) %>'">Show</button>
-	<button type="button" class="btn btn-info btn-xs" onclick="location.href='<%= edit_article_path(article) %>'">Edit</button> -->
-	<i><%= t('articles.posted_by') %> <b><%= link_to @users.find(article.user_id).username, user_profile_path(article.user_id) %></b></i><br />
-	<% if user_signed_in? %>
-		<% if current_user.username ==  @users.find(article.user_id).username %>
-			<!-- <%= link_to "Show", article_path(article), class: "btn btn-success btn-xs" %> -->
-			<%= link_to t('buttons.edit'), edit_article_path(article), class: "btn btn-warning btn-xs" %>
-			<%= link_to t('buttons.delete'), article_path(article), class: "btn btn-danger btn-xs", method: :delete, data: { confirm: t('confirms.sure') } %>
-		<% end %>
-	<% end %>
-</p>
+		<p>
+			<!-- <button type="button" class="btn btn-success btn-xs" onclick="location.href='<%= article_path(article) %>'">Show</button>
+			<button type="button" class="btn btn-info btn-xs" onclick="location.href='<%= edit_article_path(article) %>'">Edit</button> -->
 
-<hr />
+			<i><%= t('articles.posted_by') %> <b><%= link_to @users.find(article.user_id).username, user_profile_path(article.user_id) %></b></i> <%= image_tag @profiles.where(user_id: article.user_id).first.image.attachment_url(:thumb) %>
+			<br />
+			<br />
+
+			<% if user_signed_in? %>
+				<% if current_user.username ==  @users.find(article.user_id).username %>
+					<!-- <%= link_to "Show", article_path(article), class: "btn btn-success btn-xs" %> -->
+					<%= link_to t('buttons.edit'), edit_article_path(article), class: "btn btn-warning btn-xs" %>
+					<%= link_to t('buttons.delete'), article_path(article), class: "btn btn-danger btn-xs", method: :delete, data: { confirm: t('confirms.sure') } %>
+				<% end %>
+			<% end %>
+		</p>
+
+		<hr />
+	</div>
+</div>
 
 <% end %>
