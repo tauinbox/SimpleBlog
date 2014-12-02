@@ -1,5 +1,9 @@
 <h1><%= @article.title %></h1>
 
+<% if  @article.images.first%>
+	<%= image_tag @article.images.first.attachment_url %>
+<% end %>
+
 <p>
 	<%= simple_format(@article.text) %>
 </p>

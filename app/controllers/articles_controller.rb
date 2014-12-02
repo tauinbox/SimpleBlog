@@ -9,9 +9,12 @@ class ArticlesController < ApplicationController
 
   def show
     @article = Article.find(params[:id])
+    # @image = @article.images
   end
 
   def new
+    @article = Article.new
+    @article.images.build
   end
 
   def create
@@ -60,7 +63,7 @@ class ArticlesController < ApplicationController
   private
 
   def article_params
-    params.require(:article).permit(:title, :text)
+    params.require(:article).permit(:title, :text, images_attributes: [:attachment, :description])
   end
 
 end
