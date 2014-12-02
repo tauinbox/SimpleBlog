@@ -4,7 +4,7 @@
 <% if @image.attachment.size == 0 %>
 	<h3> Avatar is missing </h3></br>
 <% else %>
-	<img src="<%= @image.attachment %>" />
+	<%= image_tag @image.attachment_url %>
 	</br>
 	</br>
 <% end %>
