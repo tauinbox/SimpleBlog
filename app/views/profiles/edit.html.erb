@@ -6,7 +6,7 @@
 	</br>
 	</br>
 <% else %>
-	<img src="<%= @profile.image.attachment %>" /></br>
+	<%= image_tag @profile.image.attachment_url %></br>
 	<%= link_to "Change avatar", edit_image_path(@image) %>
 	</br>
 	</br>
