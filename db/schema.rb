@@ -24,14 +24,15 @@ ActiveRecord::Schema.define(version: 20141128095929) do
   add_index "articles", ["user_id"], name: "index_articles_on_user_id"
 
   create_table "comments", force: true do |t|
-    t.string   "author"
     t.text     "body"
     t.integer  "article_id"
+    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   add_index "comments", ["article_id"], name: "index_comments_on_article_id"
+  add_index "comments", ["user_id"], name: "index_comments_on_user_id"
 
   create_table "contacts", force: true do |t|
     t.string   "email"
