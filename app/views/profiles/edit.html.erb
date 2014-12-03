@@ -3,13 +3,13 @@
 
 <% if @image.attachment.size == 0 %>
 	<%= link_to "Upload avatar", edit_image_path(@image) %>
-	</br>
-	</br>
+	<br />
+	<br />
 <% else %>
-	<%= image_tag @profile.image.attachment_url %></br>
+	<%= image_tag @profile.image.attachment_url %><br />
 	<%= link_to "Change avatar", edit_image_path(@image) %>
-	</br>
-	</br>
+	<br />
+	<br />
 <% end %>
 
 

@@ -1,16 +1,16 @@
  <h1>User profile</h1>
 
 <% if @profile.image.attachment.size == 0 %>
-	<h3> Avatar is missing </h3></br>
+	<h3> Avatar is missing </h3><br />
 <% else %>
 	<%= image_tag @profile.image.attachment_url %>
-	</br>
-	</br>
+	<br />
+	<br />
 <% end %>
 
 <%= @profile.description %>
-</br>
-</br>
+<br />
+<br />
 <% if user_signed_in? %>
   <% if @profile.user_id == current_user.id %>
   	<%= link_to 'Edit profile', edit_user_profile_path(current_user.id), class: "btn btn-warning" %>

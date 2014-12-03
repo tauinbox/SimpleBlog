@@ -2,17 +2,17 @@
 
 
 <% if @image.attachment.size == 0 %>
-	<h3> Avatar is missing </h3></br>
+	<h3> Avatar is missing </h3><br />
 <% else %>
 	<%= image_tag @image.attachment_url %>
-	</br>
-	</br>
+	<br />
+	<br />
 <% end %>
 
 <div class="well">
   <%= form_for @image, html: { multipart: true } do |f| %>
-    <%= f.label :attachment %></br>
-    <%= f.file_field :attachment %></br>
+    <%= f.label :attachment %><br />
+    <%= f.file_field :attachment %><br />
     <%= f.submit "Save", class: "btn btn-primary" %>
   <% end %>
 </div>

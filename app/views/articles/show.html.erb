@@ -11,7 +11,10 @@
 <% @article.comments.each do |comment| %>
 	<p>
 		<hr />
-		<i><b><%= comment.author %></b> <%= t('articles.commented') %></i><br />
+		<%= image_tag Profile.find(comment.user_id).image.attachment_url(:thumb) %><br />
+		<i><b><%= link_to User.find(comment.user_id).username, user_profile_path(comment.user_id) %></b> <%= t('articles.commented') %></i>
+		<br />
+		<br />
 		<%= comment.body %>
 	</p>
 <% end %>

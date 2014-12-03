@@ -3,11 +3,11 @@
 <div class="row">
 
 	<div class="col-xs-2">
-		</br>
+		<br />
 		<%= image_tag @profiles.where(user_id: article.user_id).first.image.attachment_url(:thumb) %>
-		</br>
-		</br>
-		<i><%= t('articles.posted_by') %> <b><%= link_to @users.find(article.user_id).username, user_profile_path(article.user_id) %></b></i></br>
+		<br />
+		<br />
+		<i><%= t('articles.posted_by') %> <b><%= link_to @users.find(article.user_id).username, user_profile_path(article.user_id) %></b></i><br />
 		<%= article.updated_at.strftime("%b %-d, %Y %H:%M")%>
 	</div>
 
@@ -20,6 +20,10 @@
 			<%= simple_format(truncate(article.text, length: 250)) %>
 		</p>
 
+		<div class="alert alert-info">
+			Number of comments: <%= article.comments_count %>
+		</div>
+
 		<p>
 			<% if user_signed_in? %>
 				<% if current_user.username ==  @users.find(article.user_id).username %>
@@ -28,7 +32,6 @@
 				<% end %>
 			<% end %>
 		</p>
-
 	</div>
 </div>
 <hr />

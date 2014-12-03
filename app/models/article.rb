@@ -16,4 +16,8 @@ class Article < ActiveRecord::Base
     comments.last
   end
   
+  def comments_count
+    comments.count
+  end
+  
 end
