@@ -6,8 +6,7 @@ class RegistrationsController < Devise::RegistrationsController
     resource_saved = resource.save
     yield resource if block_given?
     if resource_saved
-      res = resource.build_profile(:user_id => resource.id) # передаем user_id в сущность Profile (генерируем новый профиль)
-      res.build_image(:imageable_id => res.id) # генерируем запись в таблице Images для только что созданного профиля
+      resource.build_profile(:user_id => resource.id) # передаем user_id в сущность Profile (генерируем новый профиль)
       if resource.active_for_authentication?
         set_flash_message :notice, :signed_up if is_flashing_format?
         sign_up(resource_name, resource)
