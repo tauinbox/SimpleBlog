@@ -10,7 +10,9 @@ class ProfilesController < ApplicationController
 
   def edit
     @profile = Profile.where(user_id: current_user.id).first
-    @image = @profile.image
+    unless @profile.image
+      @profile.image = Image.new
+    end
   end
 
   def update
@@ -25,7 +27,7 @@ class ProfilesController < ApplicationController
   private
 
   def profile_params
-    params.require(:profile).permit(:description)
+    params.require(:profile).permit(:description, image_attributes: [:attachment])
   end
 
 end
