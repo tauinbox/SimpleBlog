@@ -3,8 +3,6 @@ class ArticlesController < ApplicationController
 
   def index
     @articles = Article.all
-    @users = User.all
-    @profiles = Profile.all
   end
 
   def show

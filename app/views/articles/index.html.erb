@@ -4,10 +4,12 @@
 
 	<div class="col-xs-2">
 		<br />
-		<%= image_tag @profiles.where(user_id: article.user_id).first.image.attachment_url(:thumb) %>
-		<br />
-		<br />
-		<i><%= t('articles.posted_by') %> <b><%= link_to @users.find(article.user_id).username, user_profile_path(article.user_id) %></b></i><br />
+		<% if article.user.profile.image %>
+			<%= image_tag article.user.profile.image.attachment_url(:thumb) %>
+			<br />
+			<br />
+		<% end %>		
+		<i><%= t('articles.posted_by') %> <b><%= link_to article.user.username, user_profile_path(article.user_id) %></b></i><br />
 		<%= article.updated_at.strftime("%b %-d, %Y %H:%M")%>
 	</div>
 
@@ -26,7 +28,7 @@
 
 		<p>
 			<% if user_signed_in? %>
-				<% if current_user.username ==  @users.find(article.user_id).username %>
+				<% if current_user ==  article.user %>
 					<%= link_to t('buttons.edit'), edit_article_path(article), class: "btn btn-warning btn-xs" %>
 					<%= link_to t('buttons.delete'), article_path(article), class: "btn btn-danger btn-xs", method: :delete, data: { confirm: t('confirms.sure') } %>
 				<% end %>

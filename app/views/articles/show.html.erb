@@ -11,8 +11,10 @@
 <% @article.comments.each do |comment| %>
 	<p>
 		<hr />
-		<%= image_tag Profile.find(comment.user_id).image.attachment_url(:thumb) %><br />
-		<i><b><%= link_to User.find(comment.user_id).username, user_profile_path(comment.user_id) %></b> <%= t('articles.commented') %></i>
+		<% if comment.user.profile.image %>
+			<%= image_tag comment.user.profile.image.attachment_url(:thumb) %><br />
+		<% end %>		
+		<i><b><%= link_to comment.user.username, user_profile_path(comment.user_id) %></b> <%= t('articles.commented') %></i>
 		<br />
 		<br />
 		<%= comment.body %>
