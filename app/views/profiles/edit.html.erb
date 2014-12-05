@@ -1,19 +1,22 @@
 <h1>Edit profile</h1>
 
 
-<% if @image.attachment.size == 0 %>
-	<%= link_to "Upload avatar", edit_image_path(@image) %>
+<% if @profile.image.attachment%>
+	<%= image_tag @profile.image.attachment_url %>
 	<br />
 	<br />
 <% else %>
-	<%= image_tag @profile.image.attachment_url %><br />
-	<%= link_to "Change avatar", edit_image_path(@image) %>
-	<br />
-	<br />
+	<h3> No avatar </h3><br />
 <% end %>
 
 
 <%= form_for :profile, url: user_profile_path(current_user.id), method: :put do |f| %>
+
+	<p>
+		<%= f.fields_for :image_attributes do |i| %>
+			<%= i.file_field :attachment, class: 'well' %><br />
+		<% end %>
+	</p>
 
 	<p>
 		<%= f.label :description %><br />
