@@ -19,6 +19,16 @@
 	</p>
 
 	<p>
+		<%= f.label :gender %><br />
+		<%= f.select(:gender, options_for_select([['Not specified', 0], ['Male', 1], ['Female', 2]], @profile.gender)) %>
+	</p>
+
+	<p>
+		<%= f.label :birthdate %><br />
+		<%= f.date_select :birthdate, start_year: 1940, class: 'form-control', rows: 5 %>
+	</p>
+
+	<p>
 		<%= f.label :description %><br />
 		<%= f.text_area :description, class: 'form-control', rows: 5 %>
 	</p>
