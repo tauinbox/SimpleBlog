@@ -55,9 +55,9 @@ ActiveRecord::Schema.define(version: 20141206115545) do
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "gender"
+    t.integer  "gender",      default: 0
     t.datetime "birthdate"
-    t.string   "timezone"
+    t.integer  "timezone"
   end
 
   add_index "profiles", ["user_id"], name: "index_profiles_on_user_id"
