@@ -7,7 +7,6 @@ class ArticlesController < ApplicationController
 
   def show
     @article = Article.find(params[:id])
-    # @image = @article.images
   end
 
   def new
@@ -17,9 +16,9 @@ class ArticlesController < ApplicationController
 
   def create
     @article = Article.new(article_params)
-    @article.user_id = current_user.id
+    @article.user = current_user
     if @article.save
-      redirect_to @article
+      redirect_to @article, notice: "Article created"
     else
       render action: 'new'
     end
@@ -28,10 +27,9 @@ class ArticlesController < ApplicationController
   def edit
     @article = Article.find(params[:id])
     if current_user.id != @article.user_id
-      flash.now[:error] = I18n.t('flashes.cant_edit')
       @articles = Article.all
       @users = User.all
-      render action: 'index'
+      render action: 'index', alert: I18n.t('flashes.cant_edit')
     end
   end
 
@@ -47,10 +45,9 @@ class ArticlesController < ApplicationController
   def destroy
     @article = Article.find(params[:id])
     if current_user.id != @article.user_id
-      flash.now[:error] = I18n.t('flashes.cant_delete')
       @articles = Article.all
       @users = User.all
-      render action: 'index'
+      render action: 'index', alert: I18n.t('flashes.cant_delete')
     else
       @article.destroy
       redirect_to articles_path
