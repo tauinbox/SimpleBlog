@@ -1,5 +1,15 @@
 <h1><%= t('articles.new') %></h1>
 
+<% unless @article.errors.empty? %>
+  <div class="alert alert-danger">
+    <ul>
+      <% @article.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
 <%= form_for @article, url: articles_path do |f| %>
 	<p>
 		<%= f.label :title %><br />
