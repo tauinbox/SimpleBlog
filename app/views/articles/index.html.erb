@@ -22,9 +22,11 @@
 			<%= simple_format(truncate(article.text, length: 250)) %>
 		</p>
 
-		<div class="alert alert-info">
-			Number of comments: <%= article.comments_count %>
-		</div>
+		<p>
+			<span class="badge" >
+				Number of comments: <%= article.comments_count %>
+			</span>
+		</p>
 
 		<p>
 			<% if user_signed_in? %>
