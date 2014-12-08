@@ -27,8 +27,9 @@
 			    </button>
 				<%= link_to t('main_layout.blog_name'), articles_path, class: "navbar-brand" %>
 			</div>
-
-			<div class="navbar-collapse collapse">
+			
+			<!-- Collect the nav links, forms, and other content for toggling -->
+			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 
 				<ul class="nav navbar-nav">
 					<li><%= link_to t('main_layout.new_article'), new_article_path %></li>
