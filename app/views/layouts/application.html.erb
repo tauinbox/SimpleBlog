@@ -27,7 +27,7 @@
 			    </button>
 				<%= link_to t('main_layout.blog_name'), articles_path, class: "navbar-brand" %>
 			</div>
-			
+
 			<!-- Collect the nav links, forms, and other content for toggling -->
 			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 
@@ -51,10 +51,17 @@
 		</div><!-- /.container-fluid -->
 	</nav>
 
-	<p class="notice"><%= notice %></p>
-	<p class="alert"><%= alert %></p>
+	<% unless flash[:notice].blank? %>
+	  	<div class="alert alert-info">
+	  		<%= flash[:notice] %>
+	  	</div>
+	<% end %>
 
-  	<p style="color: red; background-color: yellow; width: 30%"><b><%= flash[:error] %></b></p>
+	<% unless flash[:alert].blank? %>
+	  	<div class="alert alert-danger">
+	  		<%= flash[:alert] %>
+	  	</div>
+	<% end %>
 
 	<%= yield %>
 
