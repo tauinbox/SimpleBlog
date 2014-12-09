@@ -52,7 +52,20 @@ class ArticlesController < ApplicationController
       @article.destroy
       redirect_to articles_path
     end
+  end
 
+  def rating_inc
+    @article = Article.find(params[:id])
+    @article.rating += 1
+    @article.save
+    render action: 'index', notice: "rating incremented"
+  end
+
+  def rating_dec
+    @article = Article.find(params[:id])
+    @article.rating -= 1
+    @article.save
+    render action: 'index', notice: "rating decremented"
   end
 
   private
