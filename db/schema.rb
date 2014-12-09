@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141206115545) do
+ActiveRecord::Schema.define(version: 20141209063310) do
 
   create_table "articles", force: true do |t|
     t.string   "title"
@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 20141206115545) do
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "rating",     default: 0
   end
 
   add_index "articles", ["user_id"], name: "index_articles_on_user_id"
@@ -29,6 +30,7 @@ ActiveRecord::Schema.define(version: 20141206115545) do
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "rating",     default: 0
   end
 
   add_index "comments", ["article_id"], name: "index_comments_on_article_id"
@@ -58,6 +60,7 @@ ActiveRecord::Schema.define(version: 20141206115545) do
     t.integer  "gender",      default: 0
     t.datetime "birthdate"
     t.integer  "timezone"
+    t.integer  "rating",      default: 0
   end
 
   add_index "profiles", ["user_id"], name: "index_profiles_on_user_id"
