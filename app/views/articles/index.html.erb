@@ -22,11 +22,24 @@
 			<%= simple_format(truncate(article.text, length: 250)) %>
 		</p>
 
-		<p>
-			<span class="badge" >
-				Number of comments: <%= article.comments_count %>
-			</span>
-		</p>
+		<div class="row">
+			<div class="col-xs-3">
+				<span class="badge" >
+					Number of comments: <%= article.comments_count %>
+				</span>
+			</div>
+
+			<div class="col-xs-7">
+			</div>
+
+			<div class="col-xs-2">
+				<span class="badge" >
+					Rating: <%= article.rating %>
+				</span>
+				<%= link_to '+', '#', class: "btn btn-success btn-xs" %>
+				<%= link_to '-', '#', class: "btn btn-danger btn-xs" %>
+			</div>
+		</div>
 
 		<p>
 			<% if user_signed_in? %>
