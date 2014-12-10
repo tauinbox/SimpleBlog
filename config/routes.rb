@@ -21,6 +21,10 @@ Rails.application.routes.draw do
 
   resources :articles do
     resources :comments, only: :create
+    member do
+      get :rating_inc
+      get :rating_dec
+    end
   end
 
   resources :users do
