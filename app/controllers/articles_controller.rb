@@ -1,5 +1,5 @@
 class ArticlesController < ApplicationController
-  before_filter :authenticate_user!, :only => [:new, :create, :edit, :destroy]
+  before_filter :authenticate_user!, :only => [:new, :create, :edit, :destroy, :rating_inc, :rating_dec]
 
   def index
     @articles = Article.all
@@ -58,14 +58,14 @@ class ArticlesController < ApplicationController
     @article = Article.find(params[:id])
     @article.rating += 1
     @article.save
-    render action: 'index', notice: "rating incremented"
+    redirect_to action: 'index'
   end
 
   def rating_dec
     @article = Article.find(params[:id])
     @article.rating -= 1
     @article.save
-    render action: 'index', notice: "rating decremented"
+    redirect_to action: 'index'
   end
 
   private
