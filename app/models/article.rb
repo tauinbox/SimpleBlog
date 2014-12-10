@@ -5,6 +5,8 @@ class Article < ActiveRecord::Base
   has_many :comments
   belongs_to :user
   has_many :images, as: :imageable
+  has_many :votes, as: :voting
+  has_many :users, through: :votes
 
   accepts_nested_attributes_for :images
 
