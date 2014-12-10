@@ -54,18 +54,42 @@ class ArticlesController < ApplicationController
     end
   end
 
-  def rating_inc
+  def voteup
     @article = Article.find(params[:id])
-    @article.rating += 1
-    @article.save
+    # flash[:notice] = @article.votes.where(user_id: current_user.id).first.inspect
+    unless vote = @article.votes.where(user_id: current_user.id).first
+      vote = @article.votes.new
+      vote.user = current_user
+    end
+    if vote.value == 1
+      flash[:notice] = 'Alredy voted'
+    else
+      vote.value += 1
+      vote.save
+    end
+    #flash[:notice] = vote.inspect
     redirect_to action: 'index'
   end
 
-  def rating_dec
+  def votedown
     @article = Article.find(params[:id])
-    @article.rating -= 1
-    @article.save
+    unless vote = @article.votes.where(user_id: current_user.id).first
+      vote = @article.votes.new
+      vote.user = current_user
+    end
+    if vote.value == -1
+      flash[:notice] = 'Alredy voted'
+    else
+      vote.value -= 1
+      vote.save
+    end
+    #flash[:notice] = vote.inspect
     redirect_to action: 'index'
+  end
+
+  def votemap
+    @article = Article.find(params[:id])
+    @votes = @article.votes
   end
 
   private
