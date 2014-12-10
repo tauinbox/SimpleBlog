@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141209063310) do
+ActiveRecord::Schema.define(version: 20141210063837) do
 
   create_table "articles", force: true do |t|
     t.string   "title"
@@ -19,7 +19,6 @@ ActiveRecord::Schema.define(version: 20141209063310) do
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "rating",     default: 0
   end
 
   add_index "articles", ["user_id"], name: "index_articles_on_user_id"
@@ -30,7 +29,6 @@ ActiveRecord::Schema.define(version: 20141209063310) do
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "rating",     default: 0
   end
 
   add_index "comments", ["article_id"], name: "index_comments_on_article_id"
@@ -60,7 +58,6 @@ ActiveRecord::Schema.define(version: 20141209063310) do
     t.integer  "gender",      default: 0
     t.datetime "birthdate"
     t.integer  "timezone"
-    t.integer  "rating",      default: 0
   end
 
   add_index "profiles", ["user_id"], name: "index_profiles_on_user_id"
@@ -84,5 +81,16 @@ ActiveRecord::Schema.define(version: 20141209063310) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   add_index "users", ["username"], name: "index_users_on_username", unique: true
+
+  create_table "votes", force: true do |t|
+    t.integer  "value",       default: 0
+    t.integer  "user_id"
+    t.integer  "voting_id"
+    t.string   "voting_type"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "votes", ["user_id"], name: "index_votes_on_user_id"
 
 end
