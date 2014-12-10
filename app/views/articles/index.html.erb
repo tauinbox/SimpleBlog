@@ -33,12 +33,17 @@
 			</div>
 
 			<div class="col-xs-2">
+				<%= link_to 'Rating: ', votemap_article_path(article) %>
 				<span class="badge" >
-					Rating: <%= article.rating %>
+					<% s=0 %>
+					<% article.votes.each do |vot|  %>
+					<% s += vot.value %>
+					<% end %>
+					<%= s %>
 				</span>
 				<!-- <button class="btn btn-primary" onclick="rating_inc()">Click me!</button> -->
-				<%= link_to '+', rating_inc_article_path(article), class: "btn btn-success btn-xs" %>
-				<%= link_to '-', rating_dec_article_path(article), class: "btn btn-danger btn-xs" %>
+				<%= link_to '+', voteup_article_path(article), class: "btn btn-success btn-xs" %>
+				<%= link_to '-', votedown_article_path(article), class: "btn btn-danger btn-xs" %>
 			</div>
 		</div>
 
