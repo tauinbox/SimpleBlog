@@ -36,8 +36,9 @@
 				<span class="badge" >
 					Rating: <%= article.rating %>
 				</span>
-				<%= link_to '+', '#', class: "btn btn-success btn-xs" %>
-				<%= link_to '-', '#', class: "btn btn-danger btn-xs" %>
+				<!-- <button class="btn btn-primary" onclick="rating_inc()">Click me!</button> -->
+				<%= link_to '+', rating_inc_article_path(article), class: "btn btn-success btn-xs" %>
+				<%= link_to '-', rating_dec_article_path(article), class: "btn btn-danger btn-xs" %>
 			</div>
 		</div>
 
