@@ -44,16 +44,21 @@
 					</span>
 				</div>
 				<!-- <button class="btn btn-primary" onclick="rating_inc()">Click me!</button> -->
-				<div class="row">
-					<%= link_to '+', voteup_article_path(article), class: "btn btn-success btn-xs" %>
-					<%= link_to '-', votedown_article_path(article), class: "btn btn-danger btn-xs" %>
-				</div>
+				<% if user_signed_in? %>
+					<% unless article.user == current_user %>
+						<div class="row">
+							<%= link_to '+', voteup_article_path(article), class: "btn btn-success btn-xs" %>
+							<%= link_to '-', votedown_article_path(article), class: "btn btn-danger btn-xs" %>
+						</div>
+					<% end %>
+				<% end %>
 			</div>
 		</div>
 
 		<p>
 			<% if user_signed_in? %>
 				<% if current_user ==  article.user %>
+					<br />
 					<%= link_to t('buttons.edit'), edit_article_path(article), class: "btn btn-warning btn-xs" %>
 					<%= link_to t('buttons.delete'), article_path(article), class: "btn btn-danger btn-xs", method: :delete, data: { confirm: t('confirms.sure') } %>
 				<% end %>
