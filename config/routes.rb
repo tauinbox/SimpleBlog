@@ -20,7 +20,13 @@ Rails.application.routes.draw do
   resource :contacts, only: [:new, :create], path_names: { :new => '' } 
 
   resources :articles do
-    resources :comments, only: :create
+    resources :comments, only: :create do
+      member do
+        get :voteup
+        get :votedown
+        get :votemap      
+      end
+    end
     member do
       get :voteup
       get :votedown
@@ -29,7 +35,13 @@ Rails.application.routes.draw do
   end
 
   resources :users do
-    resource :profile, only: [:show, :edit, :update]
+    resource :profile, only: [:show, :edit, :update] do
+      member do
+        get :voteup
+        get :votedown
+        get :votemap      
+      end
+    end
   end
 
   resources :images, only: [:edit, :update]
