@@ -34,7 +34,7 @@
 
 			<div class="col-xs-2">
 				<%= link_to 'Rating: ', votemap_article_path(article) %>
-				<span class="badge" >
+				<span class="badge">
 					<% s=0 %>
 					<% article.votes.each do |vot|  %>
 					<% s += vot.value %>
