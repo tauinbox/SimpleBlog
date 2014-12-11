@@ -1,0 +1,7 @@
+<h2>Voters list</h2>
+
+<% @votes.each do |vote| %>
+	<% if vote.value != 0 %>
+		<%= vote.user.username %>: <%= vote.value %><br />
+	<% end %>
+<% end %>
