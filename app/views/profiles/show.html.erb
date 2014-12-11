@@ -12,7 +12,23 @@
 <br />
 <br />
 <% if user_signed_in? %>
-  <% if @profile.user_id == current_user.id %>
-  	<%= link_to 'Edit profile', edit_user_profile_path(current_user.id), class: "btn btn-warning" %>
-  <% end %>
+	<div>
+		<%= link_to 'Rating: ', votemap_user_profile_path %>
+		<span class="badge" >
+			<% s=0 %>
+			<% @profile.votes.each do |vot|  %>
+			<% s += vot.value %>
+			<% end %>
+			<%= s %>
+		</span>
+		<% unless @profile.user == current_user %>
+			<%= link_to '+', voteup_user_profile_path, class: "btn btn-success btn-xs" %>
+			<%= link_to '-', votedown_user_profile_path, class: "btn btn-danger btn-xs" %> 
+		<% end %>
+		<br />
+		<br />
+	</div>  
+	<% if @profile.user_id == current_user.id %>
+  		<%= link_to 'Edit profile', edit_user_profile_path(current_user.id), class: "btn btn-warning" %>
+  	<% end %>
 <% end %>
