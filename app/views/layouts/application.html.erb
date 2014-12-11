@@ -37,14 +37,15 @@
 				</ul>
 
 				<ul class="nav navbar-nav navbar-right">
-				  <li>
 					<% if user_signed_in? %>
+						<% if current_user.profile.image %>
+							<li><%= image_tag current_user.profile.image.attachment_url(:thumb) %></li>
+						<% end %>
 						<li><%= link_to t('main_layout.hello') + current_user.username + '!', user_profile_path(current_user.id) %></li>
 						<li><%= link_to t('action_links.sign_out'), destroy_user_session_path, method: :delete %></li>
 					<% else %>
 						<li><%= link_to t('action_links.sign_in'), new_user_session_path %></li>
 					<% end %>
-				  </li>
 				</ul>
 
 			</div><!--/.nav-collapse -->
