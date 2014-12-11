@@ -19,6 +19,19 @@
 		<br />
 		<%= comment.body %>
 	</p>
+	<div>
+		<%= link_to 'Rating: ', votemap_article_comment_path(@article, comment) %>
+		<span class="badge" >
+			<% s=0 %>
+			<% comment.votes.each do |vot|  %>
+			<% s += vot.value %>
+			<% end %>
+			<%= s %>
+		</span>
+
+		<%= link_to '+', voteup_article_comment_path(@article, comment), class: "btn btn-success btn-xs" %>
+		<%= link_to '-', votedown_article_comment_path(@article, comment), class: "btn btn-danger btn-xs" %> 
+	</div>
 <% end %>
 
 <hr />
