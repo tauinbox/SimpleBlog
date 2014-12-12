@@ -47,7 +47,10 @@
 				<% if user_signed_in? %>
 					<% unless article.user == current_user %>
 						<div class="row">
+						<!--
 							<%= link_to '+', voteup_article_path(article), class: "btn btn-success btn-xs" %>
+						-->
+							<span class="voteupAction" data-article_id=<%= article.id %>>+</span>
 							<%= link_to '-', votedown_article_path(article), class: "btn btn-danger btn-xs" %>
 						</div>
 					<% end %>
