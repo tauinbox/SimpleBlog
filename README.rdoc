@@ -1,6 +1,7 @@
 == README
 
 This is my first project on Rails
+
 In it I am trying to implement a learning things
 
 For work, I use the following versions of Ruby and Rails:
