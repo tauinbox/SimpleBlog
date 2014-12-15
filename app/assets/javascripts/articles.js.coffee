@@ -4,5 +4,6 @@
 
 $ ->
 	$(".voteupAction").click ->
-  		if confirm "123"
-  			alert "Ok"
+    $articleid = $(this).data "article_id"
+    alert $articleid
+    
