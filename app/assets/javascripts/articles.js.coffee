@@ -5,5 +5,12 @@
 $ ->
 	$(".voteupAction").click ->
     $articleid = $(this).data "article_id"
-    alert $articleid
+    $.ajax
+      url: '/articles/' + $articleid + '/voteup'
+      type: 'GET'
+      error: (jqXHR, textStatus, errorThrown) ->
+        console.log textStatus, errorThrown
+      success: (result) ->
+        location.reload()
+        console.log result
     
