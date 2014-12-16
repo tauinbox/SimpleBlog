@@ -2,7 +2,7 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
-$ ->
+ready = ->
   $("#voteup").click ->
     $articleid = $(this).data "article-id"
     $.ajax
@@ -13,3 +13,6 @@ $ ->
       success: (result) ->
         location.reload()
         console.log result
+
+$(document).ready(ready)
+$(document).on('page:load', ready)
