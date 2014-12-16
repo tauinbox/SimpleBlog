@@ -3,8 +3,8 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
 $ ->
-	$(".voteupAction").click ->
-    $articleid = $(this).data "article_id"
+  $("#voteup").click ->
+    $articleid = $(this).data "article-id"
     $.ajax
       url: '/articles/' + $articleid + '/voteup'
       type: 'GET'
@@ -13,4 +13,3 @@ $ ->
       success: (result) ->
         location.reload()
         console.log result
-    

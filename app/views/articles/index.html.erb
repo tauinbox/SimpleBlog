@@ -50,7 +50,7 @@
 						<!--
 							<%= link_to '+', voteup_article_path(article), class: "btn btn-success btn-xs" %>
 						-->
-							<span class="voteupAction" data-article_id=<%= article.id %>>+</span>
+							<%= link_to '+', '#', id: 'voteup', class: "btn btn-success btn-xs", data: {article_id: article.id} %>						
 							<%= link_to '-', votedown_article_path(article), class: "btn btn-danger btn-xs" %>
 						</div>
 					<% end %>
