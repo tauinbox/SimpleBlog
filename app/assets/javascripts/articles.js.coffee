@@ -11,8 +11,12 @@ ready = ->
       error: (jqXHR, textStatus, errorThrown) ->
         console.log textStatus, errorThrown
       success: (result) ->
-        location.reload()
+        # location.reload()
+        res = "#votevalue"+$articleid
+        # alert res
+        $(res).text(result.vote)
         console.log result
+        # console.log $("#votevalue"+$articleid)
 
 $(document).ready(ready)
 $(document).on('page:load', ready)
