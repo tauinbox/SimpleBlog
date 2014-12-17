@@ -68,7 +68,8 @@ class ArticlesController < ApplicationController
       vote.save
     end
     #flash[:notice] = vote.inspect
-    redirect_to action: 'index'
+    # redirect_to action: 'index'
+    render json: {vote: vote.value}
   end
 
   def votedown
