@@ -63,14 +63,15 @@ class ArticlesController < ApplicationController
     end
     if vote.value == 1
       flash[:notice] = 'Alredy voted'
-      vote.value = 0
+      result = false
     else
       vote.value += 1
       vote.save
+      result = true
     end
     #flash[:notice] = vote.inspect
     # redirect_to action: 'index'
-    render json: {vote: vote.value}
+    render json: {vote: result}
   end
 
   def votedown
@@ -81,14 +82,15 @@ class ArticlesController < ApplicationController
     end
     if vote.value == -1
       flash[:notice] = 'Alredy voted'
-      vote.value = 0
+      result = false
     else
       vote.value -= 1
       vote.save
+      result = true
     end
     #flash[:notice] = vote.inspect
     # redirect_to action: 'index'
-    render json: {vote: vote.value}
+    render json: {vote: result}
   end
 
   def votemap
