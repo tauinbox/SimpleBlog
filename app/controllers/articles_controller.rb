@@ -1,5 +1,5 @@
 class ArticlesController < ApplicationController
-  before_filter :authenticate_user!, :only => [:new, :create, :edit, :destroy, :rating_inc, :rating_dec]
+  before_filter :authenticate_user!, :only => [:new, :create, :edit, :destroy, :voteup, :votedown]
 
   def index
     @articles = Article.all
