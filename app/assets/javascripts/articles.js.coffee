@@ -12,8 +12,9 @@ ready = ->
         console.log textStatus, errorThrown
       success: (result) ->
         res = "#votevalue"+$articleid
-        val = parseInt($(res).text())
-        $(res).text(parseInt(result.vote) + val)
+        if result.vote
+          val = $(res).text()
+          $(res).text(parseInt(val) + 1)
         console.log result
         # console.log $("#votevalue"+$articleid)
         # alert res        
@@ -27,22 +28,10 @@ ready = ->
         console.log textStatus, errorThrown
       success: (result) ->
         res = "#votevalue"+$articleid
-        val = parseInt($(res).text())
-        $(res).text(parseInt(result.vote) + val)
-        console.log result                
-
-# ready = ->
-  # $("#votedown").click ->
-  #   $articleid = $(this).data "article-id"
-  #   $.ajax
-  #     url: '/articles/' + $articleid + '/votedown'
-  #     type: 'GET'
-  #     error: (jqXHR, textStatus, errorThrown) ->
-  #       console.log textStatus, errorThrown
-  #     success: (result) ->
-  #       res = "#votevalue"+$articleid
-  #       $(res).text(result.vote)
-  #       console.log result        
+        if result.vote
+          val = $(res).text()
+          $(res).text(parseInt(val) - 1)
+        console.log result
 
 $(document).ready(ready)
 $(document).on('page:load', ready)
