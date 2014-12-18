@@ -7,7 +7,7 @@ ready = ->
     $articleid = $(this).data "article-id"
     $.ajax
       url: '/articles/' + $articleid + '/voteup'
-      type: 'GET'
+      type: 'POST'
       error: (jqXHR, textStatus, errorThrown) ->
         console.log textStatus, errorThrown
       success: (result) ->
@@ -23,7 +23,7 @@ ready = ->
     $articleid = $(this).data "article-id"
     $.ajax
       url: '/articles/' + $articleid + '/votedown'
-      type: 'GET'
+      type: 'POST'
       error: (jqXHR, textStatus, errorThrown) ->
         console.log textStatus, errorThrown
       success: (result) ->

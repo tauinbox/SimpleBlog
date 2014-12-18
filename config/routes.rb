@@ -28,8 +28,8 @@ Rails.application.routes.draw do
       end
     end
     member do
-      get :voteup
-      get :votedown
+      post :voteup
+      post :votedown
       get :votemap
     end
   end
