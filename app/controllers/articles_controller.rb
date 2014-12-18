@@ -62,14 +62,13 @@ class ArticlesController < ApplicationController
       vote.user = current_user
     end
     if vote.value == 1
-      flash[:notice] = 'Alredy voted'
+      # flash[:notice] = 'Alredy voted'
       result = false
     else
       vote.value += 1
       vote.save
       result = true
     end
-    #flash[:notice] = vote.inspect
     # redirect_to action: 'index'
     render json: {vote: result}
   end
@@ -81,7 +80,7 @@ class ArticlesController < ApplicationController
       vote.user = current_user
     end
     if vote.value == -1
-      flash[:notice] = 'Alredy voted'
+      # flash[:notice] = 'Alredy voted'
       result = false
     else
       vote.value -= 1
@@ -89,7 +88,6 @@ class ArticlesController < ApplicationController
       result = true
     end
     #flash[:notice] = vote.inspect
-    # redirect_to action: 'index'
     render json: {vote: result}
   end
 
