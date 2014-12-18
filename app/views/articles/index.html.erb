@@ -47,8 +47,8 @@
 				<% if user_signed_in? %>
 					<% unless article.user == current_user %>
 						<div class="row">
-							<%= link_to '+', '#', id: 'voteup', class: "btn btn-success btn-xs", data: {article_id: article.id} %>
-							<%= link_to '-', '#', id: 'votedown', class: "btn btn-danger btn-xs", data: {article_id: article.id} %>
+							<%= link_to '+', '#', class: "btn btn-success btn-xs voteup", data: {article_id: article.id} %>
+							<%= link_to '-', '#', class: "btn btn-danger btn-xs votedown", data: {article_id: article.id} %>
 							<!-- 
 							<%= link_to '-', votedown_article_path(article), class: "btn btn-danger btn-xs" %>
 							 -->

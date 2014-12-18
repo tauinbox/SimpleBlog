@@ -3,7 +3,7 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
 ready = ->
-  $("#voteup").click ->
+  $(".voteup").click ->
     $articleid = $(this).data "article-id"
     $.ajax
       url: '/articles/' + $articleid + '/voteup'
@@ -19,7 +19,7 @@ ready = ->
         # console.log $("#votevalue"+$articleid)
         # alert res        
         # location.reload()
-  $("#votedown").click ->
+  $(".votedown").click ->
     $articleid = $(this).data "article-id"
     $.ajax
       url: '/articles/' + $articleid + '/votedown'
