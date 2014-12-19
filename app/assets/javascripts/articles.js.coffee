@@ -3,15 +3,16 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
 ready = ->
-  $(".voteup").click ->
-    $articleid = $(this).data "article-id"
+  $(".voteup").click (event) ->
+    event.preventDefault()
+    articleid = $(this).data "article-id"
     $.ajax
-      url: '/articles/' + $articleid + '/voteup'
+      url: '/articles/' + articleid + '/voteup'
       type: 'POST'
       error: (jqXHR, textStatus, errorThrown) ->
         console.log textStatus, errorThrown
       success: (result) ->
-        res = "#votevalue"+$articleid
+        res = "#votevalue"+articleid
         if result.vote
           val = $(res).text()
           $(res).text(parseInt(val) + 1)
@@ -19,15 +20,16 @@ ready = ->
         # console.log $("#votevalue"+$articleid)
         # alert res        
         # location.reload()
-  $(".votedown").click ->
-    $articleid = $(this).data "article-id"
+  $(".votedown").click (event) ->
+    event.preventDefault()
+    articleid = $(this).data "article-id"
     $.ajax
-      url: '/articles/' + $articleid + '/votedown'
+      url: '/articles/' + articleid + '/votedown'
       type: 'POST'
       error: (jqXHR, textStatus, errorThrown) ->
         console.log textStatus, errorThrown
       success: (result) ->
-        res = "#votevalue"+$articleid
+        res = "#votevalue"+articleid
         if result.vote
           val = $(res).text()
           $(res).text(parseInt(val) - 1)
