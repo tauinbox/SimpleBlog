@@ -12,5 +12,4 @@ For work, I use the following versions of Ruby and Rails:
 
 * ...
 
-my favorite text editor is sublime text3
 stay tuned :)
