@@ -17,7 +17,6 @@ ready = ->
           val = $(res).text()
           $(res).text(parseInt(val) + 1)
         console.log result
-        # console.log $("#votevalue"+$articleid)
         # alert res        
         # location.reload()
   $(".votedown").click (event) ->
