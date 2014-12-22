@@ -18,13 +18,13 @@ class CommentsController < ApplicationController
       vote.user = current_user
     end
     if vote.value == 1
-      flash[:notice] = 'Alredy voted'
+      result = false
     else
       vote.value += 1
       vote.save
+      result = true
     end
-    #flash[:notice] = vote.inspect
-    redirect_to @article
+    render json: {vote: result}
   end
 
    def votedown
@@ -36,13 +36,13 @@ class CommentsController < ApplicationController
       vote.user = current_user
     end
     if vote.value == -1
-      flash[:notice] = 'Alredy voted'
+      result = false
     else
       vote.value -= 1
       vote.save
+      result = true
     end
-    #flash[:notice] = vote.inspect
-    redirect_to @article
+    render json: {vote: result}
   end
 
   def votemap
