@@ -26,7 +26,7 @@
 	<div class="col-xs-2">
 		<div class="row">
 			<%= link_to 'Rating: ', votemap_article_comment_path(@article, comment) %>
-			<span class="badge" >
+			<span class="badge" id="votevalue<%= comment.id %>">
 				<% s=0 %>
 				<% comment.votes.each do |vot|  %>
 				<% s += vot.value %>
@@ -38,8 +38,12 @@
 		<div class="row">
 			<% if user_signed_in? %>
 				<% unless comment.user == current_user %>
+				<!-- 
 					<%= link_to '+', voteup_article_comment_path(@article, comment), class: "btn btn-success btn-xs" %>
-					<%= link_to '-', votedown_article_comment_path(@article, comment), class: "btn btn-danger btn-xs" %> 
+					<%= link_to '-', votedown_article_comment_path(@article, comment), class: "btn btn-danger btn-xs" %>
+					 -->
+					<%= link_to '+', '#', class: "btn btn-success btn-xs voteupc", data: {comment_id: comment.id, article_id: @article.id} %>
+					<%= link_to '-', '#', class: "btn btn-danger btn-xs votedownc", data: {comment_id: comment.id, article_id: @article.id} %>
 				<% end %>
 			<% end %>
 		</div>
