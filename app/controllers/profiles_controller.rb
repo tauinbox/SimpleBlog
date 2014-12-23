@@ -34,14 +34,14 @@ class ProfilesController < ApplicationController
         vote.user = current_user
       end
       if vote.value == 1
-        flash[:notice] = 'Alredy voted'
+        result = false
       else
         vote.value += 1
         vote.save
+        result = true
       end
     end
-    #flash[:notice] = vote.inspect
-    redirect_to action: 'show'
+    render json: {vote: result}
   end
 
   def votedown
@@ -53,14 +53,14 @@ class ProfilesController < ApplicationController
         vote.user = current_user
       end
       if vote.value == -1
-        flash[:notice] = 'Alredy voted'
+        result = false
       else
         vote.value -= 1
         vote.save
+        result = true
       end
     end
-    #flash[:notice] = vote.inspect
-    redirect_to action: 'show'
+    render json: {vote: result}
   end
 
   def votemap
