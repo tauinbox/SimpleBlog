@@ -37,8 +37,8 @@ Rails.application.routes.draw do
   resources :users do
     resource :profile, only: [:show, :edit, :update] do
       member do
-        get :voteup
-        get :votedown
+        post :voteup
+        post :votedown
         get :votemap      
       end
     end
