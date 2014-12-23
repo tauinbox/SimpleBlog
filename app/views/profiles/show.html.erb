@@ -14,7 +14,7 @@
 
 <div>
 	<%= link_to 'Rating: ', votemap_user_profile_path %>
-	<span class="badge" >
+	<span class="badge" id="votevalue<%= @profile.user_id %>">
 		<% s=0 %>
 		<% @profile.votes.each do |vot|  %>
 		<% s += vot.value %>
@@ -26,8 +26,12 @@
 <% if user_signed_in? %>
 	<div>
 		<% unless @profile.user == current_user %>
+			<!-- 
 			<%= link_to '+', voteup_user_profile_path, class: "btn btn-success btn-xs" %>
 			<%= link_to '-', votedown_user_profile_path, class: "btn btn-danger btn-xs" %>
+			-->
+			<%= link_to '+', '#', class: "btn btn-success btn-xs voteupp", data: {user_id: @profile.user_id} %>
+			<%= link_to '-', '#', class: "btn btn-danger btn-xs votedownp", data: {user_id: @profile.user_id} %>
 			<br />
 			<br />
 		<% end %>
