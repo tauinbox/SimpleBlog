@@ -1,0 +1,115 @@
+en:
+
+  activerecord:
+
+    models:
+      article:                  "Article"
+      comment:                  "Comment"
+      contact:                  "Contact"
+
+    attributes:
+
+      article:
+        title:                  "Title"
+        text:                   "Text"
+
+      comment:
+        body:                   "Comment"
+        author:                 "Author"
+
+      contact:
+        email:                  "E-mail"
+        message:                "Message"
+
+  helpers:
+
+    label:
+
+      article:
+        title:                  "Title"
+        text:                   "Text"
+
+      comment:
+        body:                   "Comment"
+        author:                 "Author"
+
+      contact:
+        email:                  "E-mail"
+        message:                "Text"
+
+      user:
+        email:                  "E-mail"
+        password:               "Password"
+        password_confirmation:  "Confirm new password"
+        current_password:       "Current password"
+
+  headers:
+    sign_in:                    "Sign In"
+    sign_out:                   "Sign Out"
+    sign_up:                    "Sign Up"
+    resend_confr:               "Resend confirmation instructions"
+    change_pass:                "Change your password"
+    profile_chng:               "Edit profile - "
+    cancel_acc:                 "Cancel my account"
+
+  contacts:
+    contact_us:                 "Contact Us"
+    send_message:               "Send message"
+    created:                    "Thanks!"
+
+  articles:
+    new:                        "New Article"
+    edit:                       "Edit article"
+    add_comment:                "Add comment"
+    posted_by:                  "Posted by"
+    submit:                     "Save changes"
+    create:                     "Post It!"
+    commented:                  " said: "
+
+  buttons:
+    edit:                       "Edit"
+    delete:                     "Delete"
+    update:                     "Update"
+    sign_in:                    "Sign In"
+    sign_out:                   "Sign Out"
+    sign_up:                    "Sign Up"
+    resend_confr:               "Resend confirmation instructions"
+    change_pass:                "Change password"
+    cancel_acc:                 "Cancel my account"
+
+  confirms:
+    sure:                       "Are you sure?"
+
+  infostrings:
+    rating:                     "Rating:"
+    commentsnum:                "Number of comments:"
+
+  flashes:
+    cant_edit:                  "YOU CAN'T EDIT OTHER PEOPLE'S POSTS!"
+    cant_delete:                "YOU CAN'T DELETE OTHER PEOPLE'S POSTS!"
+
+  links:
+    terms:                      "Terms of service"
+    feedback:                   "Contact Us"    
+
+  main_layout:
+    blog_name:                  "Sample Blog"
+    new_article:                "New Post"
+    about:                      "About"
+    hello:                      "Hello, "
+
+  action_links:
+    sign_in:                    "Sign In"
+    sign_out:                   "Sign Out"
+    sign_up:                    "Sign Up"
+    back:                       "Back"
+    forgot_pass:                "Forgot your password?"
+    d_r_conf_ins:               "Didn't receive confirmation instructions?"
+    d_r_unlk_ins:               "Didn't receive unlock instructions?"
+    sign_in_with:               "Sign in with #{provider.to_s.titleize}"
+
+  pages:
+    terms_header:               "Terms of Service"
+    about_header:               "About us"
+    terms_info:                 "All rights unreserved. Use at your own risk"
+    about_info:                 "We are the champions my friend"
