@@ -93,7 +93,7 @@ en:
     feedback:                   "Contact Us"    
 
   main_layout:
-    blog_name:                  "Sample Blog"
+    blog_name:                  "SimpleBlog"
     new_article:                "New Post"
     about:                      "About"
     hello:                      "Hello, "
