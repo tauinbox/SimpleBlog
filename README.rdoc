@@ -1,6 +1,6 @@
 == README
 
-This is my first project on Rails
+This is my training project on Rails
 
 In it I am trying to implement a learning things
 
