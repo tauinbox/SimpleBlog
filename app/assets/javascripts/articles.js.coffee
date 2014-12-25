@@ -19,6 +19,7 @@ ready = ->
         console.log result
         # alert res        
         # location.reload()
+
   $(".votedown").click (event) ->
     event.preventDefault()
     articleid = $(this).data "article-id"
@@ -33,6 +34,8 @@ ready = ->
           val = $(res).text()
           $(res).text(parseInt(val) - 1)
         console.log result
+
+  $(":file").filestyle buttonText: "Image file"
 
 $(document).ready(ready)
 $(document).on('page:load', ready)
