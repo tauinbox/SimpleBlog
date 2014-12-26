@@ -17,7 +17,7 @@
 	</p>
 
 	<%= f.fields_for :images do |i| %>
-		<%= i.file_field :attachment, class: 'well filestyle', data: "Find file" %><br />
+		<%= i.file_field :attachment, id: 'article-img' %><br />
 	<% end %>
 	
 	<p>
