@@ -14,7 +14,7 @@
 
 	<p>
 		<%= f.fields_for :image_attributes do |i| %>
-			<%= i.file_field :attachment, class: 'well' %><br />
+			<%= i.file_field :attachment, id: 'profile-img' %><br />
 		<% end %>
 	</p>
 
