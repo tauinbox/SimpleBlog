@@ -35,7 +35,15 @@ ready = ->
           $(res).text(parseInt(val) - 1)
         console.log result
 
-  $(":file").filestyle buttonText: "Image file"
+  $("#article-img").filestyle 
+    buttonText: "Хочу добавить картинку"
+    buttonName: "btn-info"
+    input: false
+
+  $("#profile-img").filestyle 
+    buttonText: "Загрузить файл аватара"
+    buttonName: "btn-info"
+    input: false
 
 $(document).ready(ready)
 $(document).on('page:load', ready)
