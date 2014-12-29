@@ -1,41 +1,49 @@
 <h1>Edit profile</h1>
 
+<div class="row">
 
-<% if @profile.image.attachment%>
-	<%= image_tag @profile.image.attachment_url %>
-	<br />
-	<br />
-<% else %>
-	<h3> No avatar </h3><br />
-<% end %>
+	<hr />
+	<div class="col-xs-5">
 
-
-<%= form_for :profile, url: user_profile_path(current_user.id), method: :put do |f| %>
-
-	<p>
-		<%= f.fields_for :image_attributes do |i| %>
-			<%= i.file_field :attachment, id: 'profile-img' %><br />
+		<% if @profile.image.attachment%>
+			<%= image_tag @profile.image.attachment_url %>
+			<br />
+			<br />
+		<% else %>
+			<h3> No avatar </h3><br />
 		<% end %>
-	</p>
+	</div>
 
-	<p>
-		<%= f.label :gender %><br />
-		<%= f.select(:gender, options_for_select([['Not specified', 0], ['Male', 1], ['Female', 2]], @profile.gender)) %>
-	</p>
+	<div class="col-xs-7">
 
-	<p>
-		<%= f.label :birthdate %><br />
-		<%= f.date_select :birthdate, start_year: 1940, class: 'form-control', rows: 5 %>
-	</p>
+		<%= form_for :profile, url: user_profile_path(current_user.id), method: :put do |f| %>
 
-	<p>
-		<%= f.label :description %><br />
-		<%= f.text_area :description, class: 'form-control', rows: 5 %>
-	</p>
+			<p>
+				<%= f.fields_for :image_attributes do |i| %>
+					<%= i.file_field :attachment, id: 'profile-img' %><br />
+				<% end %>
+			</p>
 
-	<p>
-	<%= f.submit 'Submit', class: 'btn btn-primary' %>
-	</p>
+			<p>
+				<%= f.label :gender %><br />
+				<%= f.select(:gender, options_for_select([['Not specified', 0], ['Male', 1], ['Female', 2]], @profile.gender)) %>
+			</p>
 
-<% end %>
+			<p>
+				<%= f.label :birthdate %><br />
+				<%= f.date_select :birthdate, start_year: 1940, class: 'form-control', rows: 5 %>
+			</p>
+
+			<p>
+				<%= f.label :description %><br />
+				<%= f.text_area :description, class: 'form-control', rows: 5 %>
+			</p>
+
+			<p>
+			<%= f.submit 'Submit', class: 'btn btn-primary' %>
+			</p>
+
+		<% end %>
+	</div>
+</div>
 
