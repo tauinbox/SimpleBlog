@@ -62,7 +62,6 @@ class ArticlesController < ApplicationController
       vote.user = current_user
     end
     if vote.value == 1
-      # flash[:notice] = 'Alredy voted'
       result = false
     else
       vote.value += 1
