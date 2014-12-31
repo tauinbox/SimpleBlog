@@ -3,7 +3,7 @@
 <div class="row">
 
 	<hr />
-	<div class="col-xs-5">
+	<div class="col-md-5">
 
 		<% if @profile.image.attachment%>
 			<%= image_tag @profile.image.attachment_url %>
@@ -14,7 +14,7 @@
 		<% end %>
 	</div>
 
-	<div class="col-xs-7">
+	<div class="col-md-7">
 
 		<%= form_for :profile, url: user_profile_path(current_user.id), method: :put do |f| %>
 
