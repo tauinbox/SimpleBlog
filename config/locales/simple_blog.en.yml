@@ -87,6 +87,7 @@ en:
   flashes:
     cant_edit:                  "YOU CAN'T EDIT OTHER PEOPLE'S POSTS!"
     cant_delete:                "YOU CAN'T DELETE OTHER PEOPLE'S POSTS!"
+    article_created:            "Article created"
 
   links:
     terms:                      "Terms of service"
