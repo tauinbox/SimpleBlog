@@ -46,13 +46,16 @@
 
 				<% if user_signed_in? %>
 					<% unless article.user == current_user %>
-						<div class="row">
-							<%= link_to '+', '#', class: "btn btn-success btn-xs voteup", data: {article_id: article.id} %>
-							<%= link_to '-', '#', class: "btn btn-danger btn-xs votedown", data: {article_id: article.id} %>
-							<!-- 
-							<%= link_to '-', votedown_article_path(article), class: "btn btn-danger btn-xs" %>
-							 -->
-						</div>
+						<% if article.votes.where(user_id: current_user.id).first.nil? %>
+							<div class="row">
+								<%= link_to '+', '#', class: "btn btn-success btn-xs voteup", data: {article_id: article.id} %>
+								<%= link_to '-', '#', class: "btn btn-danger btn-xs votedown", data: {article_id: article.id} %>
+								<!-- 
+								<%= link_to '-', votedown_article_path(article), class: "btn btn-danger btn-xs" %>
+								<%= article.votes.where(user_id: current_user.id).first.nil?.inspect %>
+								 -->
+							</div>
+						<% end %>
 					<% end %>
 				<% end %>
 			</div>
