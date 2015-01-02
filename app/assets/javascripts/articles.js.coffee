@@ -6,6 +6,7 @@ ready = ->
   $(".voteup").click (event) ->
     event.preventDefault()
     articleid = $(this).data "article-id"
+    $(this).parent().hide()
     $.ajax
       url: '/articles/' + articleid + '/voteup'
       type: 'POST'
@@ -23,6 +24,7 @@ ready = ->
   $(".votedown").click (event) ->
     event.preventDefault()
     articleid = $(this).data "article-id"
+    $(this).parent().hide()
     $.ajax
       url: '/articles/' + articleid + '/votedown'
       type: 'POST'
