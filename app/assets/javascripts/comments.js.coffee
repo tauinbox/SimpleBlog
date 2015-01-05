@@ -7,7 +7,7 @@ ready = ->
     event.preventDefault()
     commentid = $(this).data "comment-id"
     articleid = $(this).data "article-id"
-    $(this).parent().hide()
+    $(this).parent().hide("slow")
     $.ajax
       url: '/articles/' + articleid + '/comments/' + commentid + '/voteup'
       type: 'POST'
@@ -24,7 +24,7 @@ ready = ->
     event.preventDefault()
     commentid = $(this).data "comment-id"
     articleid = $(this).data "article-id"
-    $(this).parent().hide()
+    $(this).parent().hide("slow")
     $.ajax
       url: '/articles/' + articleid + '/comments/' + commentid + '/votedown'
       type: 'POST'
