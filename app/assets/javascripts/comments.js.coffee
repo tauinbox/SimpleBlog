@@ -18,6 +18,10 @@ ready = ->
         if result.vote
           val = $(res).text()
           $(res).text(parseInt(val) + 1)
+          backgr = $(res).css("background-color")
+          $(res).css("background-color": "#449D44").animate
+            "background-color": backgr
+          , 1000
         console.log result
 
   $(".votedownc").click (event) ->
@@ -35,6 +39,10 @@ ready = ->
         if result.vote
           val = $(res).text()
           $(res).text(parseInt(val) - 1)
+          backgr = $(res).css("background-color")
+          $(res).css("background-color": "#C9302C").animate
+            "background-color": backgr
+          , 1000
         console.log result
 
 $(document).ready(ready)
