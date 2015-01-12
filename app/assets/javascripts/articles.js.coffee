@@ -2,32 +2,6 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
-ready = ->
-  $(".voteup").click (event) ->
-    event.preventDefault()
-    obj = $(this)
-    voting(true, obj)
-        # alert res        
-        # location.reload()
-
-  $(".votedown").click (event) ->
-    event.preventDefault()
-    obj = $(this)
-    voting(false, obj)
-
-  $("#article-img").filestyle 
-    buttonText: "Хочу добавить картинку"
-    buttonName: "btn-info"
-    input: false
-
-  $("#profile-img").filestyle 
-    buttonText: "Загрузить файл аватара"
-    buttonName: "btn-info"
-    input: false
-
-$(document).ready(ready)
-$(document).on('page:load', ready)
-
 
 # voting function takes two parameters
 # if first parameter is true the raiting counter is incremented by 1, else counter is decremented by 1
@@ -59,3 +33,30 @@ voting = (updown, objct) ->
             "background-color": backgr
           , 1000
         console.log result
+
+ready = ->
+  $(".voteup").click (event) ->
+    event.preventDefault()
+    obj = $(this)
+    voting(true, obj)
+        # alert res        
+        # location.reload()
+
+  $(".votedown").click (event) ->
+    event.preventDefault()
+    obj = $(this)
+    voting(false, obj)
+
+  $("#article-img").filestyle 
+    buttonText: "Хочу добавить картинку"
+    buttonName: "btn-info"
+    input: false
+
+  $("#profile-img").filestyle 
+    buttonText: "Загрузить файл аватара"
+    buttonName: "btn-info"
+    input: false
+
+$(document).ready(ready)
+$(document).on('page:load', ready)
+
