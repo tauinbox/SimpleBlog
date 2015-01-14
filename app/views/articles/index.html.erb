@@ -36,11 +36,7 @@
 				<div class="row">
 					<%= link_to t('infostrings.rating'), votemap_article_path(article) %>
 					<span class="badge" id="votevalue<%= article.id %>">
-						<% s=0 %>
-						<% article.votes.each do |vot|  %>
-						<% s += vot.value %>
-						<% end %>
-						<%= s %>
+						<%= article.votes_sum %>
 					</span>
 				</div>
 
