@@ -12,6 +12,7 @@ voting = (up, objct, entity) ->
   switch(true)
     when (entity is "article")
       articleid = objct.data "article-id"
+
       res = "#votevalue" + articleid
       if up
         urlpath = '/articles/' + articleid + '/voteup'
@@ -25,6 +26,7 @@ voting = (up, objct, entity) ->
     when (entity is "comment")
       commentid = objct.data "comment-id"
       articleid = objct.data "article-id"
+      
       res = "#votevalue" + commentid
       if up
         urlpath = '/articles/' + articleid + '/comments/' + commentid + '/voteup'
