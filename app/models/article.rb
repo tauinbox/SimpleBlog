@@ -21,5 +21,11 @@ class Article < ActiveRecord::Base
   def comments_count
     comments.count
   end
+
+  def votes_sum
+    sum = 0
+    votes.each { |vote| sum += vote.value }
+    sum
+  end
   
 end
