@@ -1,15 +1,8 @@
 <h1><%= t('articles.edit') %></h1>
 
-<%= form_for :article, url: article_path(@article), method: :put do |f| %>
-	<p>
-		<%= f.label :title %><br />
-		<%= f.text_field :title, class: 'form-control' %>
-	</p>
+<%= form_for @article, url: article_path(@article), method: :put do |f| %>
 
-	<p>
-		<%= f.label :text %><br />
-		<%= f.text_area :text, class: 'form-control', rows: 15 %>
-	</p>
+	<%= render partial: 'form', locals: {f: f} %>
 
 	<p>
 		<%= f.submit t('articles.submit'), class: 'btn btn-primary' %>

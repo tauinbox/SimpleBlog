@@ -11,19 +11,8 @@
 <% end %>
 
 <%= form_for @article, url: articles_path do |f| %>
-	<p>
-		<%= f.label :title %><br />
-		<%= f.text_field :title, class: 'form-control' %>
-	</p>
 
-	<%= f.fields_for :images do |i| %>
-		<%= i.file_field :attachment, id: 'article-img' %><br />
-	<% end %>
-	
-	<p>
-		<%= f.label :text %><br />
-		<%= f.text_area :text, class: 'form-control', rows: 7 %>
-	</p>
+  <%= render partial: 'form', locals: { f: f } %>
 
 	<p>
 		<%= f.submit t('articles.create'), class: 'btn btn-primary' %>
