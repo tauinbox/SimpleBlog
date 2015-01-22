@@ -22,14 +22,14 @@ Rails.application.routes.draw do
   resources :articles do
     resources :comments, only: :create do
       member do
-        post :voteup
-        post :votedown
+        get :voteup
+        get :votedown
         get :votemap      
       end
     end
     member do
-      post :voteup
-      post :votedown
+      get :voteup
+      get :votedown
       get :votemap
     end
   end
