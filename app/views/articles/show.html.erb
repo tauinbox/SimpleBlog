@@ -43,8 +43,8 @@
 						<%= link_to '+', voteup_article_comment_path(@article, comment), class: "btn btn-success btn-xs" %>
 						<%= link_to '-', votedown_article_comment_path(@article, comment), class: "btn btn-danger btn-xs" %>
 						 -->
-						<%= link_to '+', '#', class: "btn btn-success btn-xs voteupc", data: {comment_id: comment.id, article_id: @article.id} %>
-						<%= link_to '-', '#', class: "btn btn-danger btn-xs votedownc", data: {comment_id: comment.id, article_id: @article.id} %>
+						<%= link_to '+', voteup_article_comment_path(@article, comment), class: "btn btn-success btn-xs voteupc", data: {comment_id: comment.id, article_id: @article.id} %>
+						<%= link_to '-', votedown_article_comment_path(@article, comment), class: "btn btn-danger btn-xs votedownc", data: {comment_id: comment.id, article_id: @article.id} %>
 					<% end %>
 				<% end %>
 			<% end %>
