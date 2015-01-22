@@ -24,7 +24,11 @@ class CommentsController < ApplicationController
       vote.save
       result = true
     end
-    render json: {vote: result}
+
+    respond_to do |format|
+      format.json { render json: {vote: result} }
+      format.html { redirect_to @article }      
+    end
   end
 
    def votedown
@@ -42,7 +46,11 @@ class CommentsController < ApplicationController
       vote.save
       result = true
     end
-    render json: {vote: result}
+
+    respond_to do |format|
+      format.json { render json: {vote: result} }
+      format.html { redirect_to @article }      
+    end
   end
 
   def votemap

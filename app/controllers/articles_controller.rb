@@ -69,7 +69,10 @@ class ArticlesController < ApplicationController
       result = true
     end
     # redirect_to action: 'index'
-    render json: {vote: result}
+    respond_to do |format|
+      format.json { render json: {vote: result} }
+      format.html { redirect_to action: 'index' }      
+    end
   end
 
   def votedown
@@ -85,7 +88,11 @@ class ArticlesController < ApplicationController
       vote.save
       result = true
     end
-    render json: {vote: result}
+
+    respond_to do |format|
+      format.json { render json: {vote: result} }
+      format.html { redirect_to action: 'index' }
+    end
   end
 
   def votemap
