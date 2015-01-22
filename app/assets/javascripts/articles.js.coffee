@@ -40,7 +40,7 @@ voting = (up, objct, entity) ->
   objct.parent().hide("slow")
   $.ajax
       url: urlpath
-      type: 'POST'
+      type: 'GET'
       error: (jqXHR, textStatus, errorThrown) ->
         console.log textStatus, errorThrown
       success: (result) ->
