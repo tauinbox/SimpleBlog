@@ -41,7 +41,11 @@ class ProfilesController < ApplicationController
         result = true
       end
     end
-    render json: {vote: result}
+
+    respond_to do |format|
+      format.json { render json: {vote: result} }
+      format.html { redirect_to action: 'show' }      
+    end
   end
 
   def votedown
@@ -59,7 +63,11 @@ class ProfilesController < ApplicationController
         result = true
       end
     end
-    render json: {vote: result}
+    
+    respond_to do |format|
+      format.json { render json: {vote: result} }
+      format.html { redirect_to action: 'show' }      
+    end
   end
 
   def votemap

@@ -36,6 +36,19 @@ voting = (up, objct, entity) ->
         urlpath = '/articles/' + articleid + '/comments/' + commentid + '/votedown'
         weight = -1
         backcolor = "#C9302C"
+
+    when (entity is "profile")
+      userid = objct.data "user-id"
+
+      res = "#votevalue" + userid
+      if up
+        urlpath = '/users/' + userid + '/profile/voteup'
+        weight = 1
+        backcolor = "#449D44"
+      else
+        urlpath = '/users/' + userid + '/profile/votedown'
+        weight = -1
+        backcolor = "#C9302C"
   
   objct.parent().hide("slow")
   $.ajax
@@ -75,6 +88,16 @@ ready = ->
     event.preventDefault()
     obj = $(this)
     voting(false, obj, "comment")
+
+  $(".voteupp").click (event) ->
+    event.preventDefault()
+    obj = $(this)
+    voting(true, obj, "profile")
+
+  $(".votedownp").click (event) ->
+    event.preventDefault()
+    obj = $(this)
+    voting(false, obj, "profile")
 
   $("#article-img").filestyle 
     buttonText: "Хочу добавить картинку"
