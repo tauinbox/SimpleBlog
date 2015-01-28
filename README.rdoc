@@ -10,6 +10,6 @@ For work, I use the following versions of Ruby and Rails:
 
 * Rails version 4.1.6
 
-* ...
+* Funny third option
 
 stay tuned :)
