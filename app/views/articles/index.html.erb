@@ -19,7 +19,7 @@
 		</h2>
 
 		<p>
-			<%= simple_format(truncate(article.text, length: 250)) %>
+			<%= truncate(article.text, length: 250, separator: /\s/, escape: false).html_safe %>
 		</p>
 
 		<div class="row">
