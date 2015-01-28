@@ -44,6 +44,13 @@ GEM
       activesupport (>= 3.2.0)
       json (>= 1.7)
       mime-types (>= 1.16)
+    ckeditor (4.1.1)
+      cocaine
+      orm_adapter (~> 0.5.0)
+    climate_control (0.0.3)
+      activesupport (>= 3.0)
+    cocaine (0.5.5)
+      climate_control (>= 0.0.3, < 1.0)
     coffee-rails (4.0.1)
       coffee-script (>= 2.2.0)
       railties (>= 4.0.0, < 5.0)
@@ -184,6 +191,7 @@ DEPENDENCIES
   bootstrap-filestyle-rails
   capybara
   carrierwave
+  ckeditor
   coffee-rails (~> 4.0.0)
   database_cleaner
   devise

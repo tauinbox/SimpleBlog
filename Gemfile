@@ -43,6 +43,7 @@ gem 'carrierwave'
 gem 'mini_magick'
 gem 'bootstrap-filestyle-rails'
 gem 'jquery-ui-rails'
+gem 'ckeditor'
 
 group :test, :development do
   gem "rspec-rails", "~> 2.4"
