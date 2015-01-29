@@ -1,11 +1,17 @@
 <h1><%= @article.title %></h1>
 
-<% if  @article.images.first%>
-	<%= image_tag @article.images.first.attachment_url %>
-<% end %>
+<p>
+	<%= @article.text.html_safe %>
+</p>
 
 <p>
-	<%= simple_format(@article.text) %>
+	<% if user_signed_in? %>
+		<% if current_user ==  @article.user %>
+			<br />
+			<%= link_to t('buttons.edit'), edit_article_path(@article), class: "btn btn-warning btn-xs" %>
+			<%= link_to t('buttons.delete'), article_path(@article), class: "btn btn-danger btn-xs", method: :delete, data: { confirm: t('confirms.sure') } %>
+		<% end %>
+	<% end %>
 </p>
 
 <% @article.comments.each do |comment| %>

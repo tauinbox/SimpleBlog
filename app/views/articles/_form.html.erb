@@ -3,10 +3,6 @@
   <%= f.text_field :title, class: 'form-control' %>
 </p>
 
-<%= f.fields_for :images do |i| %>
-  <%= i.file_field :attachment, id: 'article-img' %><br />
-<% end %>
-
 <p>
   <%= f.label :text %><br />
   <%= f.cktext_area :text, class: 'form-control' %>

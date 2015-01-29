@@ -99,11 +99,6 @@ ready = ->
     obj = $(this)
     voting(false, obj, "profile")
 
-  $("#article-img").filestyle 
-    buttonText: "Хочу добавить картинку"
-    buttonName: "btn-info"
-    input: false
-
   $("#profile-img").filestyle 
     buttonText: "Загрузить файл аватара"
     buttonName: "btn-info"

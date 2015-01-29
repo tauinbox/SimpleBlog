@@ -4,11 +4,8 @@ class Article < ActiveRecord::Base
 
   has_many :comments, dependent: :destroy
   belongs_to :user
-  has_many :images, as: :imageable, dependent: :destroy
   has_many :votes, as: :voting, dependent: :destroy
   has_many :users, through: :votes
-
-  accepts_nested_attributes_for :images
 
   def subject
     title
