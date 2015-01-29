@@ -2,7 +2,7 @@ class ArticlesController < ApplicationController
   before_filter :authenticate_user!, :only => [:new, :create, :edit, :destroy, :voteup, :votedown]
 
   def index
-    @articles = Article.all
+    @articles = Article.all.order("created_at DESC")
   end
 
   def show
