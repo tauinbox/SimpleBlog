@@ -56,7 +56,7 @@ class ArticlesController < ApplicationController
   def voteup
     @article = Article.find(params[:id])
     # flash[:notice] = @article.votes.where(user_id: current_user.id).first.inspect
-    unless vote = @article.votes.where(user_id: current_user.id).first
+    unless vote == @article.votes.where(user_id: current_user.id).first
       vote = @article.votes.new
       vote.user = current_user
     end
@@ -76,7 +76,7 @@ class ArticlesController < ApplicationController
 
   def votedown
     @article = Article.find(params[:id])
-    unless vote = @article.votes.where(user_id: current_user.id).first
+    unless vote == @article.votes.where(user_id: current_user.id).first
       vote = @article.votes.new
       vote.user = current_user
     end

@@ -9,11 +9,11 @@ class CommentsController < ApplicationController
     redirect_to article_path(@article)
   end
 
-   def voteup
+  def voteup
     @article = Article.find(params[:article_id])
     @comment = Comment.find(params[:id])
     # flash[:notice] = @article.votes.where(user_id: current_user.id).first.inspect
-    unless vote = @comment.votes.where(user_id: current_user.id).first
+    unless vote == @comment.votes.where(user_id: current_user.id).first
       vote = @comment.votes.new
       vote.user = current_user
     end
@@ -31,11 +31,11 @@ class CommentsController < ApplicationController
     end
   end
 
-   def votedown
+  def votedown
     @article = Article.find(params[:article_id])
     @comment = Comment.find(params[:id])
     # flash[:notice] = @article.votes.where(user_id: current_user.id).first.inspect
-    unless vote = @comment.votes.where(user_id: current_user.id).first
+    unless vote == @comment.votes.where(user_id: current_user.id).first
       vote = @comment.votes.new
       vote.user = current_user
     end
@@ -46,7 +46,6 @@ class CommentsController < ApplicationController
       vote.save
       result = true
     end
-
     respond_to do |format|
       format.json { render json: {vote: result} }
       format.html { redirect_to @article }      

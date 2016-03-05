@@ -29,7 +29,7 @@ class ProfilesController < ApplicationController
     @profile = Profile.where(user_id: params[:user_id]).first
     # flash[:notice] = @article.votes.where(user_id: current_user.id).first.inspect
     unless @profile.user == current_user
-      unless vote = @profile.votes.where(user_id: current_user.id).first
+      unless vote == @profile.votes.where(user_id: current_user.id).first
         vote = @profile.votes.new
         vote.user = current_user
       end
@@ -51,7 +51,7 @@ class ProfilesController < ApplicationController
   def votedown
     @profile = Profile.where(user_id: params[:user_id]).first
     unless @profile.user == current_user
-      unless vote = @profile.votes.where(user_id: current_user.id).first
+      unless vote == @profile.votes.where(user_id: current_user.id).first
         vote = @profile.votes.new
         vote.user = current_user
       end
