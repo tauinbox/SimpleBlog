@@ -14,7 +14,7 @@ gem 'coffee-rails', '~> 4.0.0'
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 gem 'therubyracer',  platforms: :ruby
 # Use jquery as the JavaScript library
-gem 'jquery-rails'
+gem 'jquery-rails', '3.1.2'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
@@ -37,13 +37,13 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw]
 
-gem 'devise'
+gem 'devise', '3.4.1'
 
-gem 'carrierwave'
-gem 'mini_magick'
-gem 'bootstrap-filestyle-rails'
-gem 'jquery-ui-rails'
-gem 'ckeditor'
+gem 'carrierwave', '0.10.0'
+gem 'mini_magick', '4.0.1'
+gem 'bootstrap-filestyle-rails', '1.1.2'
+gem 'jquery-ui-rails', '5.0.3'
+gem 'ckeditor', '4.1.1'
 
 group :test, :development do
   gem "rspec-rails", "~> 2.4"
