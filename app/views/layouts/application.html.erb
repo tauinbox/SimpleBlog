@@ -1,30 +1,29 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Blog</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link data-require="bootstrap@*" data-semver="3.2.0" rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.css" />
-  <script data-require="jquery@*" data-semver="2.1.1" src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-  <script data-require="bootstrap@*" data-semver="3.2.0" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.js"></script>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
+	<title>Blog</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link data-require="bootstrap@*" data-semver="3.2.0" rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.css" />
+	<script data-require="jquery@*" data-semver="2.1.1" src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+	<script data-require="bootstrap@*" data-semver="3.2.0" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.js"></script>
+	<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+	<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+	<%= csrf_meta_tags %>
 </head>
 
 <body>
-<div class = "container">
 	<!-- Static navbar -->
 	<nav class="navbar navbar-default" role="navigation">
-		<div class="container-fluid">
+		<div class="container">
 
 			<!-- Brand and toggle get grouped for better mobile display -->
-	    	<div class="navbar-header">
-			    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-				    <span class="sr-only">Toggle navigation</span>
-				    <span class="icon-bar"></span>
-				    <span class="icon-bar"></span>
-				    <span class="icon-bar"></span>
-			    </button>
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
 				<%= link_to t('main_layout.blog_name'), articles_path, class: "navbar-brand" %>
 			</div>
 
@@ -33,40 +32,40 @@
 
 				<ul class="nav navbar-nav">
 					<li><%= link_to t('main_layout.new_article'), new_article_path %></li>
-				  <li><%= link_to t('main_layout.about'), about_path %></li>
+					<li><%= link_to t('main_layout.about'), about_path %></li>
 				</ul>
 
 				<ul class="nav navbar-nav navbar-right">
 					<% if user_signed_in? %>
-						<% if current_user.profile.image %>
-							<li><%= image_tag current_user.profile.image.attachment_url(:thumb) %></li>
-						<% end %>
-						<li><%= link_to t('main_layout.hello') + current_user.username + '!', user_profile_path(current_user.id) %></li>
-						<li><%= link_to t('action_links.sign_out'), destroy_user_session_path, method: :delete %></li>
+					<% if current_user.profile.image %>
+					<li><%= image_tag current_user.profile.image.attachment_url(:thumb) %></li>
+					<% end %>
+					<li><%= link_to t('main_layout.hello') + current_user.username + '!', user_profile_path(current_user.id) %></li>
+					<li><%= link_to t('action_links.sign_out'), destroy_user_session_path, method: :delete %></li>
 					<% else %>
-						<li><%= link_to t('action_links.sign_in'), new_user_session_path %></li>
+					<li><%= link_to t('action_links.sign_in'), new_user_session_path %></li>
 					<% end %>
 				</ul>
 
 			</div><!--/.nav-collapse -->
-		</div><!-- /.container-fluid -->
+		</div><!-- /.container -->
 	</nav>
 
 	<% unless flash[:notice].blank? %>
-	  	<div class="alert alert-info">
-	  		<%= flash[:notice] %>
-	  	</div>
+	<div class="alert alert-info">
+		<%= flash[:notice] %>
+	</div>
 	<% end %>
 
 	<% unless flash[:alert].blank? %>
-	  	<div class="alert alert-danger">
-	  		<%= flash[:alert] %>
-	  	</div>
+	<div class="alert alert-danger">
+		<%= flash[:alert] %>
+	</div>
 	<% end %>
 
-	<%= yield %>
-
-</div>
+	<div class="container">
+		<%= yield %>
+	</div>
 
 </body>
 </html>
