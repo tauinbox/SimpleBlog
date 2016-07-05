@@ -44,6 +44,7 @@ gem 'mini_magick', '4.0.1'
 gem 'bootstrap-filestyle-rails', '1.1.2'
 gem 'jquery-ui-rails', '5.0.3'
 gem 'ckeditor', '4.1.1'
+gem 'truncate_html', '0.9.3'
 
 group :test, :development do
   gem "rspec-rails", "~> 2.4"
